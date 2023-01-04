@@ -1,0 +1,12 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = require("express");
+const createForm_controller_1 = require("../controllers/createForm.controller");
+const getForm_controller_1 = require("../controllers/getForm.controller");
+const getForms_controller_1 = require("../controllers/getForms.controller");
+const router = (0, express_1.Router)();
+router.get("/forms", getForms_controller_1.getForms);
+router.post("/forms", createForm_controller_1.createForm);
+router.get("/forms/:id", getForm_controller_1.getForm);
+// router.delete("/pdfs/:id", deletePdf);
+exports.default = router;
