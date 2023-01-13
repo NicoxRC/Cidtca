@@ -382,55 +382,55 @@ export const Form = sequelize.define(
     pregunta_65_porque: {
       type: DataTypes.STRING,
     },
-    pregunta_66_yogurt_medida: {
+    pregunta_66_yogurt_presentacion: {
       type: DataTypes.STRING,
     },
     pregunta_66_yogurt_valor: {
       type: DataTypes.STRING,
     },
-    pregunta_66_kumis_medida: {
+    pregunta_66_kumis_presentacion: {
       type: DataTypes.STRING,
     },
     pregunta_66_kumis_valor: {
       type: DataTypes.STRING,
     },
-    pregunta_66_cuajada_medida: {
+    pregunta_66_cuajada_presentacion: {
       type: DataTypes.STRING,
     },
     pregunta_66_cuajada_valor: {
       type: DataTypes.STRING,
     },
-    pregunta_66_queso_doble_crema_medida: {
+    pregunta_66_queso_doble_crema_presentacion: {
       type: DataTypes.STRING,
     },
     pregunta_66_queso_doble_crema_valor: {
       type: DataTypes.STRING,
     },
-    pregunta_66_queso_campesino_medida: {
+    pregunta_66_queso_campesino_presentacion: {
       type: DataTypes.STRING,
     },
     pregunta_66_queso_campesino_valor: {
       type: DataTypes.STRING,
     },
-    pregunta_66_leche_medida: {
+    pregunta_66_leche_presentacion: {
       type: DataTypes.STRING,
     },
     pregunta_66_leche_valor: {
       type: DataTypes.STRING,
     },
-    pregunta_66_quesos_madurados_medida: {
+    pregunta_66_quesos_madurados_presentacion: {
       type: DataTypes.STRING,
     },
     pregunta_66_quesos_madurados_valor: {
       type: DataTypes.STRING,
     },
-    pregunta_66_requeson_medida: {
+    pregunta_66_requeson_presentacion: {
       type: DataTypes.STRING,
     },
     pregunta_66_requeson_valor: {
       type: DataTypes.STRING,
     },
-    pregunta_66_arequipe_medida: {
+    pregunta_66_arequipe_presentacion: {
       type: DataTypes.STRING,
     },
     pregunta_66_arequipe_valor: {
