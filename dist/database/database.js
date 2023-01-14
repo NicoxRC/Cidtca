@@ -7,13 +7,13 @@ exports.sequelize = void 0;
 const sequelize_1 = require("sequelize");
 const dotenv_1 = __importDefault(require("dotenv"));
 dotenv_1.default.config();
-const { DB_USER, DB_PASSWORD, DB_HOST, DB_NAME } = process.env;
+const { DB_USER, DB_PASSWORD, DB_HOST, DB_NAME, DB_PORT } = process.env;
 exports.sequelize = process.env.NODE_ENV === "production"
     ? new sequelize_1.Sequelize({
         database: DB_NAME,
         dialect: "postgres",
         host: DB_HOST,
-        port: 5917 || 5432,
+        port: Number(DB_PORT),
         username: DB_USER,
         password: DB_PASSWORD,
         pool: {
