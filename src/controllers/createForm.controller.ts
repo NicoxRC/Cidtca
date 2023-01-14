@@ -2,7 +2,6 @@ import { Form } from "../models/Form";
 import { Request, Response } from "express";
 
 export const createForm = async (req: Request, res: Response) => {
-  console.log("entre");
   try {
     const {
       pregunta_1,

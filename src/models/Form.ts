@@ -5,9 +5,9 @@ export const Form = sequelize.define(
   "forms",
   {
     id: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.UUID,
       primaryKey: true,
-      autoIncrement: true,
+      defaultValue: DataTypes.UUIDV4,
       allowNull: false,
     },
     pregunta_1: {
@@ -452,7 +452,7 @@ export const Form = sequelize.define(
       type: DataTypes.STRING,
     },
     firma_encuestado: {
-      type: DataTypes.ARRAY(DataTypes.JSON),
+      type: DataTypes.TEXT,
     },
     nombre_encuestador: {
       type: DataTypes.STRING,
@@ -461,7 +461,7 @@ export const Form = sequelize.define(
       type: DataTypes.STRING,
     },
     firma_encuestador: {
-      type: DataTypes.ARRAY(DataTypes.JSON),
+      type: DataTypes.TEXT,
     },
   },
   {

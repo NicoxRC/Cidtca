@@ -5,9 +5,9 @@ const database_1 = require("../database/database");
 const sequelize_1 = require("sequelize");
 exports.Form = database_1.sequelize.define("forms", {
     id: {
-        type: sequelize_1.DataTypes.INTEGER,
+        type: sequelize_1.DataTypes.UUID,
         primaryKey: true,
-        autoIncrement: true,
+        defaultValue: sequelize_1.DataTypes.UUIDV4,
         allowNull: false,
     },
     pregunta_1: {
@@ -452,7 +452,7 @@ exports.Form = database_1.sequelize.define("forms", {
         type: sequelize_1.DataTypes.STRING,
     },
     firma_encuestado: {
-        type: sequelize_1.DataTypes.ARRAY(sequelize_1.DataTypes.JSON),
+        type: sequelize_1.DataTypes.TEXT,
     },
     nombre_encuestador: {
         type: sequelize_1.DataTypes.STRING,
@@ -461,7 +461,7 @@ exports.Form = database_1.sequelize.define("forms", {
         type: sequelize_1.DataTypes.STRING,
     },
     firma_encuestador: {
-        type: sequelize_1.DataTypes.ARRAY(sequelize_1.DataTypes.JSON),
+        type: sequelize_1.DataTypes.TEXT,
     },
 }, {
     timestamps: false,
