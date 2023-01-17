@@ -173,25 +173,21 @@ const createForm = (req, res) => __awaiter(void 0, void 0, void 0, function* () 
             const imageUploaded = yield (0, cloudinary_1.uploadImage)(firma_encuestado);
             let url = imageUploaded.url;
             newForm.firma_encuestado = url;
-            console.log("gola", url);
         }
         else {
             const imageUploaded = yield (0, cloudinary_1.uploadImage)(firma_encuestador[0]);
             let url = imageUploaded.url;
             newForm.firma_encuestado = url;
-            console.log(url);
         }
         if (typeof firma_encuestador === "string") {
             const imageUploaded = yield (0, cloudinary_1.uploadImage)(firma_encuestador);
             let url = imageUploaded.url;
             newForm.firma_encuestador = url;
-            console.log("gola", url);
         }
         else {
             const imageUploaded = yield (0, cloudinary_1.uploadImage)(firma_encuestador[0]);
             let url = imageUploaded.url;
             newForm.firma_encuestador = url;
-            console.log(url);
         }
         const formComplete = yield Form_1.Form.create(newForm);
         res.status(201).json(formComplete);

@@ -317,24 +317,20 @@ export const createForm = async (req: Request, res: Response) => {
       const imageUploaded = await uploadImage(firma_encuestado);
       let url = imageUploaded.url;
       newForm.firma_encuestado = url;
-      console.log("gola", url);
     } else {
       const imageUploaded = await uploadImage(firma_encuestador[0]);
       let url = imageUploaded.url;
       newForm.firma_encuestado = url;
-      console.log(url);
     }
 
     if (typeof firma_encuestador === "string") {
       const imageUploaded = await uploadImage(firma_encuestador);
       let url = imageUploaded.url;
       newForm.firma_encuestador = url;
-      console.log("gola", url);
     } else {
       const imageUploaded = await uploadImage(firma_encuestador[0]);
       let url = imageUploaded.url;
       newForm.firma_encuestador = url;
-      console.log(url);
     }
 
     const formComplete = await Form.create(newForm);
