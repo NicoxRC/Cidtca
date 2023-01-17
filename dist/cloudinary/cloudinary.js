@@ -12,19 +12,20 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const app_1 = __importDefault(require("./app"));
-const database_1 = require("./database/database");
-function main() {
-    return __awaiter(this, void 0, void 0, function* () {
-        try {
-            yield database_1.sequelize.sync({ force: true });
-            app_1.default.listen(process.env.PORT, () => {
-                console.log("listening on port", process.env.PORT);
-            });
-        }
-        catch (error) {
-            console.log("error", error);
-        }
+exports.uploadImage = void 0;
+const dotenv_1 = __importDefault(require("dotenv"));
+dotenv_1.default.config();
+const cloudinary_1 = require("cloudinary");
+const { API_KEY, API_SECRET, CLOUD_NAME } = process.env;
+cloudinary_1.v2.config({
+    cloud_name: CLOUD_NAME,
+    api_key: API_KEY,
+    api_secret: API_SECRET,
+    secure: true,
+});
+const uploadImage = (filePath) => __awaiter(void 0, void 0, void 0, function* () {
+    return yield cloudinary_1.v2.uploader.upload(filePath, {
+        folder: "folder",
     });
-}
-main();
+});
+exports.uploadImage = uploadImage;

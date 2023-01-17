@@ -1,5 +1,7 @@
 import { Form } from "../models/Form";
 import { Request, Response } from "express";
+import { uploadImage } from "../cloudinary/cloudinary";
+// import fs from "fs";
 
 export const createForm = async (req: Request, res: Response) => {
   try {
@@ -157,7 +159,7 @@ export const createForm = async (req: Request, res: Response) => {
       firma_encuestador,
     } = req.body;
 
-    const newForm = await Form.create({
+    let newForm = {
       pregunta_1,
       pregunta_2,
       pregunta_2_otro,
@@ -309,8 +311,34 @@ export const createForm = async (req: Request, res: Response) => {
       nombre_encuestador,
       cedula_encuestador,
       firma_encuestador,
-    });
-    res.status(201).json(newForm);
+    };
+
+    if (typeof firma_encuestado === "string") {
+      const imageUploaded = await uploadImage(firma_encuestado);
+      let url = imageUploaded.url;
+      newForm.firma_encuestado = url;
+      console.log(url);
+    } else {
+      const imageUploaded = await uploadImage(firma_encuestador[0]);
+      let url = imageUploaded.url;
+      newForm.firma_encuestado = url;
+      console.log(url);
+    }
+
+    if (typeof firma_encuestador === "string") {
+      const imageUploaded = await uploadImage(firma_encuestador);
+      let url = imageUploaded.url;
+      newForm.firma_encuestador = url;
+      console.log(url);
+    } else {
+      const imageUploaded = await uploadImage(firma_encuestador[0]);
+      let url = imageUploaded.url;
+      newForm.firma_encuestador = url;
+      console.log(url);
+    }
+
+    const formComplete = await Form.create(newForm);
+    res.status(201).json(formComplete);
   } catch (error: any) {
     res.status(400).json({ error: error.message });
   }
