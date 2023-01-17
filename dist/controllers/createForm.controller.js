@@ -173,7 +173,7 @@ const createForm = (req, res) => __awaiter(void 0, void 0, void 0, function* () 
             const imageUploaded = yield (0, cloudinary_1.uploadImage)(firma_encuestado);
             let url = imageUploaded.url;
             newForm.firma_encuestado = url;
-            console.log(url);
+            console.log("gola", url);
         }
         else {
             const imageUploaded = yield (0, cloudinary_1.uploadImage)(firma_encuestador[0]);
@@ -185,7 +185,7 @@ const createForm = (req, res) => __awaiter(void 0, void 0, void 0, function* () 
             const imageUploaded = yield (0, cloudinary_1.uploadImage)(firma_encuestador);
             let url = imageUploaded.url;
             newForm.firma_encuestador = url;
-            console.log(url);
+            console.log("gola", url);
         }
         else {
             const imageUploaded = yield (0, cloudinary_1.uploadImage)(firma_encuestador[0]);
