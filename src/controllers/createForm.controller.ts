@@ -317,7 +317,7 @@ export const createForm = async (req: Request, res: Response) => {
       const imageUploaded = await uploadImage(firma_encuestado);
       let url = imageUploaded.url;
       newForm.firma_encuestado = url;
-      console.log(url);
+      console.log("gola", url);
     } else {
       const imageUploaded = await uploadImage(firma_encuestador[0]);
       let url = imageUploaded.url;
@@ -329,7 +329,7 @@ export const createForm = async (req: Request, res: Response) => {
       const imageUploaded = await uploadImage(firma_encuestador);
       let url = imageUploaded.url;
       newForm.firma_encuestador = url;
-      console.log(url);
+      console.log("gola", url);
     } else {
       const imageUploaded = await uploadImage(firma_encuestador[0]);
       let url = imageUploaded.url;
