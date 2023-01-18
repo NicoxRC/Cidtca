@@ -1,7 +1,6 @@
 import { Form } from "../models/Form";
 import { Request, Response } from "express";
 import { uploadImage } from "../cloudinary/cloudinary";
-// import fs from "fs";
 
 export const createForm = async (req: Request, res: Response) => {
   try {
@@ -315,21 +314,21 @@ export const createForm = async (req: Request, res: Response) => {
       foto_encuestado,
     };
 
-    if (typeof firma_encuestado === "string") {
+    if (typeof firma_encuestado === "string" && firma_encuestado.length > 0) {
       const imageUploaded = await uploadImage(firma_encuestado);
       let url = imageUploaded.url;
       newForm.firma_encuestado = url;
-    } else {
-      const imageUploaded = await uploadImage(firma_encuestador[0]);
+    } else if (Array.isArray(firma_encuestado)) {
+      const imageUploaded = await uploadImage(firma_encuestado[0]);
       let url = imageUploaded.url;
       newForm.firma_encuestado = url;
     }
 
-    if (typeof firma_encuestador === "string") {
+    if (typeof firma_encuestador === "string" && firma_encuestador.length > 0) {
       const imageUploaded = await uploadImage(firma_encuestador);
       let url = imageUploaded.url;
       newForm.firma_encuestador = url;
-    } else {
+    } else if (Array.isArray(firma_encuestador)) {
       const imageUploaded = await uploadImage(firma_encuestador[0]);
       let url = imageUploaded.url;
       newForm.firma_encuestador = url;
@@ -339,7 +338,7 @@ export const createForm = async (req: Request, res: Response) => {
       const imageUploaded = await uploadImage(foto_encuestado);
       let url = imageUploaded.url;
       newForm.foto_encuestado = url;
-    } else {
+    } else if (Array.isArray(foto_encuestado)) {
       const imageUploaded = await uploadImage(foto_encuestado[0]);
       let url = imageUploaded.url;
       newForm.foto_encuestado = url;
