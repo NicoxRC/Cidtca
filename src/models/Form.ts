@@ -452,7 +452,7 @@ export const Form = sequelize.define(
       type: DataTypes.STRING,
     },
     firma_encuestado: {
-      type: DataTypes.TEXT,
+      type: DataTypes.STRING,
     },
     nombre_encuestador: {
       type: DataTypes.STRING,
@@ -461,7 +461,10 @@ export const Form = sequelize.define(
       type: DataTypes.STRING,
     },
     firma_encuestador: {
-      type: DataTypes.TEXT,
+      type: DataTypes.STRING,
+    },
+    foto_encuestado: {
+      type: DataTypes.STRING,
     },
   },
   {

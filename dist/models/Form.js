@@ -452,7 +452,7 @@ exports.Form = database_1.sequelize.define("forms", {
         type: sequelize_1.DataTypes.STRING,
     },
     firma_encuestado: {
-        type: sequelize_1.DataTypes.TEXT,
+        type: sequelize_1.DataTypes.STRING,
     },
     nombre_encuestador: {
         type: sequelize_1.DataTypes.STRING,
@@ -461,7 +461,10 @@ exports.Form = database_1.sequelize.define("forms", {
         type: sequelize_1.DataTypes.STRING,
     },
     firma_encuestador: {
-        type: sequelize_1.DataTypes.TEXT,
+        type: sequelize_1.DataTypes.STRING,
+    },
+    foto_encuestado: {
+        type: sequelize_1.DataTypes.STRING,
     },
 }, {
     timestamps: false,

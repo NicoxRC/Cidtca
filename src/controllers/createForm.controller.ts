@@ -157,6 +157,7 @@ export const createForm = async (req: Request, res: Response) => {
       nombre_encuestador,
       cedula_encuestador,
       firma_encuestador,
+      foto_encuestado,
     } = req.body;
 
     let newForm = {
@@ -311,6 +312,7 @@ export const createForm = async (req: Request, res: Response) => {
       nombre_encuestador,
       cedula_encuestador,
       firma_encuestador,
+      foto_encuestado,
     };
 
     if (typeof firma_encuestado === "string") {
@@ -331,6 +333,16 @@ export const createForm = async (req: Request, res: Response) => {
       const imageUploaded = await uploadImage(firma_encuestador[0]);
       let url = imageUploaded.url;
       newForm.firma_encuestador = url;
+    }
+
+    if (typeof foto_encuestado === "string") {
+      const imageUploaded = await uploadImage(foto_encuestado);
+      let url = imageUploaded.url;
+      newForm.foto_encuestado = url;
+    } else {
+      const imageUploaded = await uploadImage(foto_encuestado[0]);
+      let url = imageUploaded.url;
+      newForm.foto_encuestado = url;
     }
 
     const formComplete = await Form.create(newForm);
