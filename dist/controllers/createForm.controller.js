@@ -195,6 +195,7 @@ const createForm = (req, res) => __awaiter(void 0, void 0, void 0, function* () 
             let url = imageUploaded.url;
             newForm.firma_encuestado = url;
         }
+        console.log('hola');
         if (typeof firma_encuestador === 'string' && firma_encuestador.length > 0) {
             const imageUploaded = yield (0, cloudinary_1.uploadImage)(firma_encuestador);
             let url = imageUploaded.url;
@@ -205,7 +206,8 @@ const createForm = (req, res) => __awaiter(void 0, void 0, void 0, function* () 
             let url = imageUploaded.url;
             newForm.firma_encuestador = url;
         }
-        if (typeof foto_encuestado === 'string') {
+        console.log('hola2');
+        if (typeof foto_encuestado === 'string' && foto_encuestado.length > 0) {
             const imageUploaded = yield (0, cloudinary_1.uploadImage)(foto_encuestado);
             let url = imageUploaded.url;
             newForm.foto_encuestado = url;
@@ -215,6 +217,7 @@ const createForm = (req, res) => __awaiter(void 0, void 0, void 0, function* () 
             let url = imageUploaded.url;
             newForm.foto_encuestado = url;
         }
+        console.log('hola3');
         const formComplete = yield Form_1.Form.create(newForm);
         res.status(201).json(formComplete);
     }
