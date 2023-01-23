@@ -8,10 +8,10 @@ const sequelize_1 = require("sequelize");
 const dotenv_1 = __importDefault(require("dotenv"));
 dotenv_1.default.config();
 const { DB_USER, DB_PASSWORD, DB_HOST, DB_NAME, DB_PORT } = process.env;
-exports.sequelize = process.env.NODE_ENV === "production"
+exports.sequelize = process.env.NODE_ENV === 'production'
     ? new sequelize_1.Sequelize({
         database: DB_NAME,
-        dialect: "postgres",
+        dialect: 'postgres',
         host: DB_HOST,
         port: Number(DB_PORT),
         username: DB_USER,

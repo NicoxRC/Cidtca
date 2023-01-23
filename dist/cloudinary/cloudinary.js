@@ -25,7 +25,7 @@ cloudinary_1.v2.config({
 });
 const uploadImage = (filePath) => __awaiter(void 0, void 0, void 0, function* () {
     return yield cloudinary_1.v2.uploader.upload(filePath, {
-        folder: "folder",
+        folder: 'folder',
     });
 });
 exports.uploadImage = uploadImage;

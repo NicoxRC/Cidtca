@@ -1,8 +1,8 @@
-import { sequelize } from "../database/database";
-import { DataTypes } from "sequelize";
+import { sequelize } from '../database/database';
+import { DataTypes } from 'sequelize';
 
 export const Form = sequelize.define(
-  "forms",
+  'forms',
   {
     id: {
       type: DataTypes.UUID,
@@ -22,6 +22,9 @@ export const Form = sequelize.define(
     pregunta_3: {
       type: DataTypes.ARRAY(DataTypes.STRING),
     },
+    pregunta_3_puntaje: {
+      type: DataTypes.STRING,
+    },
     pregunta_4: {
       type: DataTypes.STRING,
     },
@@ -37,17 +40,41 @@ export const Form = sequelize.define(
     pregunta_7: {
       type: DataTypes.STRING,
     },
+    pregunta_7_vereda: {
+      type: DataTypes.STRING,
+    },
     pregunta_8: {
       type: DataTypes.STRING,
     },
     pregunta_9: {
       type: DataTypes.ARRAY(DataTypes.STRING),
     },
+    pregunta_9_porcentaje_recibe_planta: {
+      type: DataTypes.STRING,
+    },
+    pregunta_9_porcentaje_recoge_planta: {
+      type: DataTypes.STRING,
+    },
+    pregunta_9_porcentaje_via_productor_finca: {
+      type: DataTypes.STRING,
+    },
     pregunta_9_otro: {
       type: DataTypes.STRING,
     },
     pregunta_10: {
       type: DataTypes.ARRAY(DataTypes.STRING),
+    },
+    pregunta_10_porcentaje_termo_king: {
+      type: DataTypes.STRING,
+    },
+    pregunta_10_porcentaje_carro_particular: {
+      type: DataTypes.STRING,
+    },
+    pregunta_10_porcentaje_moto: {
+      type: DataTypes.STRING,
+    },
+    pregunta_10_porcentaje_caballo: {
+      type: DataTypes.STRING,
     },
     pregunta_10_otro: {
       type: DataTypes.STRING,
@@ -128,6 +155,9 @@ export const Form = sequelize.define(
       type: DataTypes.STRING,
     },
     pregunta_23: {
+      type: DataTypes.STRING,
+    },
+    pregunta_23_gps: {
       type: DataTypes.STRING,
     },
     pregunta_24: {
@@ -346,6 +376,18 @@ export const Form = sequelize.define(
     pregunta_57: {
       type: DataTypes.ARRAY(DataTypes.STRING),
     },
+    pregunta_57_destino_transformadora_local: {
+      type: DataTypes.STRING,
+    },
+    pregunta_57_destino_transformadora_nacional: {
+      type: DataTypes.STRING,
+    },
+    pregunta_57_destino_venta_local: {
+      type: DataTypes.STRING,
+    },
+    pregunta_57_destino_venta_nacional: {
+      type: DataTypes.STRING,
+    },
     pregunta_57_otros: {
       type: DataTypes.STRING,
     },
@@ -374,6 +416,12 @@ export const Form = sequelize.define(
       type: DataTypes.STRING,
     },
     pregunta_64_gas: {
+      type: DataTypes.STRING,
+    },
+    pregunta_64_otro: {
+      type: DataTypes.STRING,
+    },
+    pregunta_64_otro_valor: {
       type: DataTypes.STRING,
     },
     pregunta_65: {

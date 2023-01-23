@@ -1,6 +1,6 @@
-import { Form } from "../models/Form";
-import { Request, Response } from "express";
-import { uploadImage } from "../cloudinary/cloudinary";
+import { Form } from '../models/Form';
+import { Request, Response } from 'express';
+import { uploadImage } from '../cloudinary/cloudinary';
 
 export const createForm = async (req: Request, res: Response) => {
   try {
@@ -9,15 +9,24 @@ export const createForm = async (req: Request, res: Response) => {
       pregunta_2,
       pregunta_2_otro,
       pregunta_3,
+      pregunta_3_puntaje,
       pregunta_4,
       pregunta_5_numero,
       pregunta_5_correo,
       pregunta_6,
       pregunta_7,
+      pregunta_7_vereda,
       pregunta_8,
       pregunta_9,
+      pregunta_9_porcentaje_recibe_planta,
+      pregunta_9_porcentaje_recoge_planta,
+      pregunta_9_porcentaje_via_productor_finca,
       pregunta_9_otro,
       pregunta_10,
+      pregunta_10_porcentaje_termo_king,
+      pregunta_10_porcentaje_carro_particular,
+      pregunta_10_porcentaje_moto,
+      pregunta_10_porcentaje_caballo,
       pregunta_10_otro,
       pregunta_11,
       pregunta_11_otro,
@@ -45,6 +54,7 @@ export const createForm = async (req: Request, res: Response) => {
       pregunta_22_porcentaje_via_carreteable,
       pregunta_22_porcentaje_trocha_a_pie,
       pregunta_23,
+      pregunta_23_gps,
       pregunta_24,
       pregunta_25,
       pregunta_26,
@@ -117,6 +127,10 @@ export const createForm = async (req: Request, res: Response) => {
       pregunta_56,
       pregunta_56_cuales,
       pregunta_57,
+      pregunta_57_destino_transformadora_local,
+      pregunta_57_destino_transformadora_nacional,
+      pregunta_57_destino_venta_local,
+      pregunta_57_destino_venta_nacional,
       pregunta_57_otros,
       pregunta_58,
       pregunta_59,
@@ -127,6 +141,8 @@ export const createForm = async (req: Request, res: Response) => {
       pregunta_63,
       pregunta_64_energia,
       pregunta_64_gas,
+      pregunta_64_otro,
+      pregunta_64_otro_valor,
       pregunta_65,
       pregunta_65_porque,
       pregunta_66_yogurt_presentacion,
@@ -164,15 +180,24 @@ export const createForm = async (req: Request, res: Response) => {
       pregunta_2,
       pregunta_2_otro,
       pregunta_3,
+      pregunta_3_puntaje,
       pregunta_4,
       pregunta_5_numero,
       pregunta_5_correo,
       pregunta_6,
       pregunta_7,
+      pregunta_7_vereda,
       pregunta_8,
       pregunta_9,
+      pregunta_9_porcentaje_recibe_planta,
+      pregunta_9_porcentaje_recoge_planta,
+      pregunta_9_porcentaje_via_productor_finca,
       pregunta_9_otro,
       pregunta_10,
+      pregunta_10_porcentaje_termo_king,
+      pregunta_10_porcentaje_carro_particular,
+      pregunta_10_porcentaje_moto,
+      pregunta_10_porcentaje_caballo,
       pregunta_10_otro,
       pregunta_11,
       pregunta_11_otro,
@@ -200,6 +225,7 @@ export const createForm = async (req: Request, res: Response) => {
       pregunta_22_porcentaje_via_carreteable,
       pregunta_22_porcentaje_trocha_a_pie,
       pregunta_23,
+      pregunta_23_gps,
       pregunta_24,
       pregunta_25,
       pregunta_26,
@@ -272,6 +298,10 @@ export const createForm = async (req: Request, res: Response) => {
       pregunta_56,
       pregunta_56_cuales,
       pregunta_57,
+      pregunta_57_destino_transformadora_local,
+      pregunta_57_destino_transformadora_nacional,
+      pregunta_57_destino_venta_local,
+      pregunta_57_destino_venta_nacional,
       pregunta_57_otros,
       pregunta_58,
       pregunta_59,
@@ -282,6 +312,8 @@ export const createForm = async (req: Request, res: Response) => {
       pregunta_63,
       pregunta_64_energia,
       pregunta_64_gas,
+      pregunta_64_otro,
+      pregunta_64_otro_valor,
       pregunta_65,
       pregunta_65_porque,
       pregunta_66_yogurt_presentacion,
@@ -314,7 +346,7 @@ export const createForm = async (req: Request, res: Response) => {
       foto_encuestado,
     };
 
-    if (typeof firma_encuestado === "string" && firma_encuestado.length > 0) {
+    if (typeof firma_encuestado === 'string' && firma_encuestado.length > 0) {
       const imageUploaded = await uploadImage(firma_encuestado);
       let url = imageUploaded.url;
       newForm.firma_encuestado = url;
@@ -324,7 +356,7 @@ export const createForm = async (req: Request, res: Response) => {
       newForm.firma_encuestado = url;
     }
 
-    if (typeof firma_encuestador === "string" && firma_encuestador.length > 0) {
+    if (typeof firma_encuestador === 'string' && firma_encuestador.length > 0) {
       const imageUploaded = await uploadImage(firma_encuestador);
       let url = imageUploaded.url;
       newForm.firma_encuestador = url;
@@ -334,7 +366,7 @@ export const createForm = async (req: Request, res: Response) => {
       newForm.firma_encuestador = url;
     }
 
-    if (typeof foto_encuestado === "string") {
+    if (typeof foto_encuestado === 'string') {
       const imageUploaded = await uploadImage(foto_encuestado);
       let url = imageUploaded.url;
       newForm.foto_encuestado = url;

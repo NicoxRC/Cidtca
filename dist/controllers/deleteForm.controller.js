@@ -9,19 +9,19 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.getForm = void 0;
+exports.deleteForm = void 0;
 const Form_1 = require("../models/Form");
-const getForm = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    const { id } = req.params;
-    let findedForm;
+const deleteForm = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        findedForm = yield Form_1.Form.findByPk(id);
-        if (!findedForm)
-            throw new Error('Not found.');
-        res.status(200).json(findedForm);
+        const { id } = req.params;
+        const deleteForm = yield Form_1.Form.findByPk(id);
+        if (!deleteForm)
+            throw new Error('Bad request.');
+        yield deleteForm.destroy();
+        res.status(202).json({ msg: 'accepted.' });
     }
     catch (error) {
-        res.status(404).json({ error: error.message });
+        res.status(400).json(error);
     }
 });
-exports.getForm = getForm;
+exports.deleteForm = deleteForm;

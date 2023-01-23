@@ -1,5 +1,5 @@
-import { Form } from "../models/Form";
-import { Request, Response } from "express";
+import { Form } from '../models/Form';
+import { Request, Response } from 'express';
 
 export const getForms = async (req: Request, res: Response) => {
   try {

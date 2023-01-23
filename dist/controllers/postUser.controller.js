@@ -9,19 +9,18 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.getForm = void 0;
-const Form_1 = require("../models/Form");
-const getForm = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    const { id } = req.params;
-    let findedForm;
+exports.postUser = void 0;
+const User_1 = require("../models/User");
+const postUser = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        findedForm = yield Form_1.Form.findByPk(id);
-        if (!findedForm)
-            throw new Error('Not found.');
-        res.status(200).json(findedForm);
+        const { user, password } = req.body;
+        if (!user || !password)
+            throw new Error('Bad Request.');
+        const newUser = yield User_1.User.create({ user, password });
+        res.status(202).json(newUser);
     }
     catch (error) {
-        res.status(404).json({ error: error.message });
+        res.status(400).json(error);
     }
 });
-exports.getForm = getForm;
+exports.postUser = postUser;

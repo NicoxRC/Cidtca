@@ -3,7 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.Form = void 0;
 const database_1 = require("../database/database");
 const sequelize_1 = require("sequelize");
-exports.Form = database_1.sequelize.define("forms", {
+exports.Form = database_1.sequelize.define('forms', {
     id: {
         type: sequelize_1.DataTypes.UUID,
         primaryKey: true,
@@ -22,6 +22,9 @@ exports.Form = database_1.sequelize.define("forms", {
     pregunta_3: {
         type: sequelize_1.DataTypes.ARRAY(sequelize_1.DataTypes.STRING),
     },
+    pregunta_3_puntaje: {
+        type: sequelize_1.DataTypes.STRING,
+    },
     pregunta_4: {
         type: sequelize_1.DataTypes.STRING,
     },
@@ -37,17 +40,41 @@ exports.Form = database_1.sequelize.define("forms", {
     pregunta_7: {
         type: sequelize_1.DataTypes.STRING,
     },
+    pregunta_7_vereda: {
+        type: sequelize_1.DataTypes.STRING,
+    },
     pregunta_8: {
         type: sequelize_1.DataTypes.STRING,
     },
     pregunta_9: {
         type: sequelize_1.DataTypes.ARRAY(sequelize_1.DataTypes.STRING),
     },
+    pregunta_9_porcentaje_recibe_planta: {
+        type: sequelize_1.DataTypes.STRING,
+    },
+    pregunta_9_porcentaje_recoge_planta: {
+        type: sequelize_1.DataTypes.STRING,
+    },
+    pregunta_9_porcentaje_via_productor_finca: {
+        type: sequelize_1.DataTypes.STRING,
+    },
     pregunta_9_otro: {
         type: sequelize_1.DataTypes.STRING,
     },
     pregunta_10: {
         type: sequelize_1.DataTypes.ARRAY(sequelize_1.DataTypes.STRING),
+    },
+    pregunta_10_porcentaje_termo_king: {
+        type: sequelize_1.DataTypes.STRING,
+    },
+    pregunta_10_porcentaje_carro_particular: {
+        type: sequelize_1.DataTypes.STRING,
+    },
+    pregunta_10_porcentaje_moto: {
+        type: sequelize_1.DataTypes.STRING,
+    },
+    pregunta_10_porcentaje_caballo: {
+        type: sequelize_1.DataTypes.STRING,
     },
     pregunta_10_otro: {
         type: sequelize_1.DataTypes.STRING,
@@ -128,6 +155,9 @@ exports.Form = database_1.sequelize.define("forms", {
         type: sequelize_1.DataTypes.STRING,
     },
     pregunta_23: {
+        type: sequelize_1.DataTypes.STRING,
+    },
+    pregunta_23_gps: {
         type: sequelize_1.DataTypes.STRING,
     },
     pregunta_24: {
@@ -346,6 +376,18 @@ exports.Form = database_1.sequelize.define("forms", {
     pregunta_57: {
         type: sequelize_1.DataTypes.ARRAY(sequelize_1.DataTypes.STRING),
     },
+    pregunta_57_destino_transformadora_local: {
+        type: sequelize_1.DataTypes.STRING,
+    },
+    pregunta_57_destino_transformadora_nacional: {
+        type: sequelize_1.DataTypes.STRING,
+    },
+    pregunta_57_destino_venta_local: {
+        type: sequelize_1.DataTypes.STRING,
+    },
+    pregunta_57_destino_venta_nacional: {
+        type: sequelize_1.DataTypes.STRING,
+    },
     pregunta_57_otros: {
         type: sequelize_1.DataTypes.STRING,
     },
@@ -374,6 +416,12 @@ exports.Form = database_1.sequelize.define("forms", {
         type: sequelize_1.DataTypes.STRING,
     },
     pregunta_64_gas: {
+        type: sequelize_1.DataTypes.STRING,
+    },
+    pregunta_64_otro: {
+        type: sequelize_1.DataTypes.STRING,
+    },
+    pregunta_64_otro_valor: {
         type: sequelize_1.DataTypes.STRING,
     },
     pregunta_65: {
