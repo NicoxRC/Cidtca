@@ -356,8 +356,6 @@ export const createForm = async (req: Request, res: Response) => {
       newForm.firma_encuestado = url;
     }
 
-    console.log('hola');
-
     if (typeof firma_encuestador === 'string' && firma_encuestador.length > 0) {
       const imageUploaded = await uploadImage(firma_encuestador);
       let url = imageUploaded.url;
@@ -368,8 +366,6 @@ export const createForm = async (req: Request, res: Response) => {
       newForm.firma_encuestador = url;
     }
 
-    console.log('hola2');
-
     if (typeof foto_encuestado === 'string' && foto_encuestado.length > 0) {
       const imageUploaded = await uploadImage(foto_encuestado);
       let url = imageUploaded.url;
@@ -379,8 +375,6 @@ export const createForm = async (req: Request, res: Response) => {
       let url = imageUploaded.url;
       newForm.foto_encuestado = url;
     }
-
-    console.log('hola3');
 
     const formComplete = await Form.create(newForm);
     res.status(201).json(formComplete);
