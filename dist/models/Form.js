@@ -10,510 +10,255 @@ exports.Form = database_1.sequelize.define('forms', {
         defaultValue: sequelize_1.DataTypes.UUIDV4,
         allowNull: false,
     },
-    pregunta_1: {
-        type: sequelize_1.DataTypes.STRING,
-    },
-    pregunta_2: {
-        type: sequelize_1.DataTypes.STRING,
-    },
-    pregunta_2_otro: {
-        type: sequelize_1.DataTypes.STRING,
-    },
-    pregunta_3: {
-        type: sequelize_1.DataTypes.ARRAY(sequelize_1.DataTypes.STRING),
-    },
-    pregunta_3_puntaje: {
-        type: sequelize_1.DataTypes.STRING,
-    },
-    pregunta_4: {
-        type: sequelize_1.DataTypes.STRING,
-    },
-    pregunta_5_numero: {
-        type: sequelize_1.DataTypes.STRING,
-    },
-    pregunta_5_correo: {
-        type: sequelize_1.DataTypes.STRING,
-    },
-    pregunta_6: {
-        type: sequelize_1.DataTypes.STRING,
-    },
-    pregunta_7: {
-        type: sequelize_1.DataTypes.STRING,
-    },
-    pregunta_7_vereda: {
-        type: sequelize_1.DataTypes.STRING,
-    },
-    pregunta_8: {
-        type: sequelize_1.DataTypes.STRING,
-    },
-    pregunta_9: {
-        type: sequelize_1.DataTypes.ARRAY(sequelize_1.DataTypes.STRING),
-    },
-    pregunta_9_porcentaje_recibe_planta: {
-        type: sequelize_1.DataTypes.STRING,
-    },
-    pregunta_9_porcentaje_recoge_planta: {
-        type: sequelize_1.DataTypes.STRING,
-    },
-    pregunta_9_porcentaje_via_productor_finca: {
-        type: sequelize_1.DataTypes.STRING,
-    },
-    pregunta_9_otro: {
-        type: sequelize_1.DataTypes.STRING,
-    },
-    pregunta_10: {
-        type: sequelize_1.DataTypes.ARRAY(sequelize_1.DataTypes.STRING),
-    },
-    pregunta_10_porcentaje_termo_king: {
-        type: sequelize_1.DataTypes.STRING,
-    },
-    pregunta_10_porcentaje_carro_particular: {
-        type: sequelize_1.DataTypes.STRING,
-    },
-    pregunta_10_porcentaje_moto: {
-        type: sequelize_1.DataTypes.STRING,
-    },
-    pregunta_10_porcentaje_caballo: {
-        type: sequelize_1.DataTypes.STRING,
-    },
-    pregunta_10_otro: {
-        type: sequelize_1.DataTypes.STRING,
-    },
-    pregunta_11: {
-        type: sequelize_1.DataTypes.ARRAY(sequelize_1.DataTypes.STRING),
-    },
-    pregunta_11_otro: {
-        type: sequelize_1.DataTypes.STRING,
-    },
-    pregunta_12: {
-        type: sequelize_1.DataTypes.ARRAY(sequelize_1.DataTypes.STRING),
-    },
-    pregunta_12_otro: {
-        type: sequelize_1.DataTypes.STRING,
-    },
-    pregunta_13: {
-        type: sequelize_1.DataTypes.ARRAY(sequelize_1.DataTypes.STRING),
-    },
-    pregunta_14: {
-        type: sequelize_1.DataTypes.STRING,
-    },
-    pregunta_15: {
-        type: sequelize_1.DataTypes.STRING,
-    },
-    pregunta_16: {
-        type: sequelize_1.DataTypes.STRING,
-    },
-    pregunta_16_cuantos: {
-        type: sequelize_1.DataTypes.STRING,
-    },
-    pregunta_17: {
-        type: sequelize_1.DataTypes.STRING,
-    },
-    pregunta_17_cuantos: {
-        type: sequelize_1.DataTypes.STRING,
-    },
-    pregunta_18: {
-        type: sequelize_1.DataTypes.STRING,
-    },
-    pregunta_18_cuantos: {
-        type: sequelize_1.DataTypes.STRING,
-    },
-    pregunta_19: {
-        type: sequelize_1.DataTypes.STRING,
-    },
-    pregunta_20: {
-        type: sequelize_1.DataTypes.STRING,
-    },
-    pregunta_21: {
-        type: sequelize_1.DataTypes.ARRAY(sequelize_1.DataTypes.STRING),
-    },
-    pregunta_21_porcentaje_pavimentada: {
-        type: sequelize_1.DataTypes.STRING,
-    },
-    pregunta_21_porcentaje_placa_huella: {
-        type: sequelize_1.DataTypes.STRING,
-    },
-    pregunta_21_porcentaje_via_carreteable: {
-        type: sequelize_1.DataTypes.STRING,
-    },
-    pregunta_21_porcentaje_trocha_a_pie: {
-        type: sequelize_1.DataTypes.STRING,
-    },
-    pregunta_22: {
-        type: sequelize_1.DataTypes.ARRAY(sequelize_1.DataTypes.STRING),
-    },
-    pregunta_22_porcentaje_pavimentada: {
-        type: sequelize_1.DataTypes.STRING,
-    },
-    pregunta_22_porcentaje_placa_huella: {
-        type: sequelize_1.DataTypes.STRING,
-    },
-    pregunta_22_porcentaje_via_carreteable: {
-        type: sequelize_1.DataTypes.STRING,
-    },
-    pregunta_22_porcentaje_trocha_a_pie: {
-        type: sequelize_1.DataTypes.STRING,
-    },
-    pregunta_23: {
-        type: sequelize_1.DataTypes.STRING,
-    },
-    pregunta_23_gps: {
-        type: sequelize_1.DataTypes.STRING,
-    },
-    pregunta_24: {
-        type: sequelize_1.DataTypes.STRING,
-    },
-    pregunta_25: {
-        type: sequelize_1.DataTypes.STRING,
-    },
-    pregunta_26: {
-        type: sequelize_1.DataTypes.ARRAY(sequelize_1.DataTypes.STRING),
-    },
-    pregunta_27: {
-        type: sequelize_1.DataTypes.STRING,
-    },
-    pregunta_28_diaria: {
-        type: sequelize_1.DataTypes.STRING,
-    },
-    pregunta_28_semanal: {
-        type: sequelize_1.DataTypes.STRING,
-    },
-    pregunta_28_mensual: {
-        type: sequelize_1.DataTypes.STRING,
-    },
-    pregunta_29_yogurt_diaria: {
-        type: sequelize_1.DataTypes.STRING,
-    },
-    pregunta_29_yogurt_semanal: {
-        type: sequelize_1.DataTypes.STRING,
-    },
-    pregunta_29_yogurt_mensual: {
-        type: sequelize_1.DataTypes.STRING,
-    },
-    pregunta_29_kumis_diaria: {
-        type: sequelize_1.DataTypes.STRING,
-    },
-    pregunta_29_kumis_semanal: {
-        type: sequelize_1.DataTypes.STRING,
-    },
-    pregunta_29_kumis_mensual: {
-        type: sequelize_1.DataTypes.STRING,
-    },
-    pregunta_29_cuajada_diaria: {
-        type: sequelize_1.DataTypes.STRING,
-    },
-    pregunta_29_cuajada_semanal: {
-        type: sequelize_1.DataTypes.STRING,
-    },
-    pregunta_29_cuajada_mensual: {
-        type: sequelize_1.DataTypes.STRING,
-    },
-    pregunta_29_queso_doble_crema_diaria: {
-        type: sequelize_1.DataTypes.STRING,
-    },
-    pregunta_29_queso_doble_crema_semanal: {
-        type: sequelize_1.DataTypes.STRING,
-    },
-    pregunta_29_queso_doble_crema_mensual: {
-        type: sequelize_1.DataTypes.STRING,
-    },
-    pregunta_29_queso_campesino_diaria: {
-        type: sequelize_1.DataTypes.STRING,
-    },
-    pregunta_29_queso_campesino_semanal: {
-        type: sequelize_1.DataTypes.STRING,
-    },
-    pregunta_29_queso_campesino_mensual: {
-        type: sequelize_1.DataTypes.STRING,
-    },
-    pregunta_29_leche_diaria: {
-        type: sequelize_1.DataTypes.STRING,
-    },
-    pregunta_29_leche_semanal: {
-        type: sequelize_1.DataTypes.STRING,
-    },
-    pregunta_29_leche_mensual: {
-        type: sequelize_1.DataTypes.STRING,
-    },
-    pregunta_29_quesos_madurados_diaria: {
-        type: sequelize_1.DataTypes.STRING,
-    },
-    pregunta_29_quesos_madurados_semanal: {
-        type: sequelize_1.DataTypes.STRING,
-    },
-    pregunta_29_quesos_madurados_mensual: {
-        type: sequelize_1.DataTypes.STRING,
-    },
-    pregunta_29_requeson_diaria: {
-        type: sequelize_1.DataTypes.STRING,
-    },
-    pregunta_29_requeson_semanal: {
-        type: sequelize_1.DataTypes.STRING,
-    },
-    pregunta_29_requeson_mensual: {
-        type: sequelize_1.DataTypes.STRING,
-    },
-    pregunta_29_arequipe_diaria: {
-        type: sequelize_1.DataTypes.STRING,
-    },
-    pregunta_29_arequipe_semanal: {
-        type: sequelize_1.DataTypes.STRING,
-    },
-    pregunta_29_arequipe_mensual: {
-        type: sequelize_1.DataTypes.STRING,
-    },
-    pregunta_29_otros: {
-        type: sequelize_1.DataTypes.STRING,
-    },
-    pregunta_30: {
-        type: sequelize_1.DataTypes.STRING,
-    },
-    pregunta_31: {
-        type: sequelize_1.DataTypes.STRING,
-    },
-    pregunta_32: {
-        type: sequelize_1.DataTypes.STRING,
-    },
-    pregunta_33: {
-        type: sequelize_1.DataTypes.STRING,
-    },
-    pregunta_34: {
-        type: sequelize_1.DataTypes.STRING,
-    },
-    pregunta_35: {
-        type: sequelize_1.DataTypes.STRING,
-    },
-    pregunta_36: {
-        type: sequelize_1.DataTypes.STRING,
-    },
-    pregunta_37: {
-        type: sequelize_1.DataTypes.STRING,
-    },
-    pregunta_37_otro: {
-        type: sequelize_1.DataTypes.STRING,
-    },
-    pregunta_38: {
-        type: sequelize_1.DataTypes.ARRAY(sequelize_1.DataTypes.STRING),
-    },
-    pregunta_38_otro: {
-        type: sequelize_1.DataTypes.STRING,
-    },
-    pregunta_39: {
-        type: sequelize_1.DataTypes.ARRAY(sequelize_1.DataTypes.STRING),
-    },
-    pregunta_39_otro: {
-        type: sequelize_1.DataTypes.STRING,
-    },
-    pregunta_40: {
-        type: sequelize_1.DataTypes.STRING,
-    },
-    pregunta_40_cuales: {
-        type: sequelize_1.DataTypes.STRING,
-    },
-    pregunta_41: {
-        type: sequelize_1.DataTypes.STRING,
-    },
-    pregunta_42: {
-        type: sequelize_1.DataTypes.STRING,
-    },
-    pregunta_43: {
-        type: sequelize_1.DataTypes.STRING,
-    },
-    pregunta_43_cuales: {
-        type: sequelize_1.DataTypes.STRING,
-    },
-    pregunta_44: {
-        type: sequelize_1.DataTypes.STRING,
-    },
-    pregunta_44_como: {
-        type: sequelize_1.DataTypes.STRING,
-    },
-    pregunta_45: {
-        type: sequelize_1.DataTypes.STRING,
-    },
-    pregunta_45_como: {
-        type: sequelize_1.DataTypes.STRING,
-    },
-    pregunta_46: {
-        type: sequelize_1.DataTypes.STRING,
-    },
-    pregunta_47: {
-        type: sequelize_1.DataTypes.STRING,
-    },
-    pregunta_48: {
-        type: sequelize_1.DataTypes.STRING,
-    },
-    pregunta_48_cual: {
-        type: sequelize_1.DataTypes.STRING,
-    },
-    pregunta_49: {
-        type: sequelize_1.DataTypes.ARRAY(sequelize_1.DataTypes.STRING),
-    },
-    pregunta_50: {
-        type: sequelize_1.DataTypes.STRING,
-    },
-    pregunta_51: {
-        type: sequelize_1.DataTypes.STRING,
-    },
-    pregunta_52: {
-        type: sequelize_1.DataTypes.STRING,
-    },
-    pregunta_53: {
-        type: sequelize_1.DataTypes.STRING,
-    },
-    pregunta_54: {
-        type: sequelize_1.DataTypes.STRING,
-    },
-    pregunta_55: {
-        type: sequelize_1.DataTypes.STRING,
-    },
-    pregunta_56: {
-        type: sequelize_1.DataTypes.STRING,
-    },
-    pregunta_56_cuales: {
-        type: sequelize_1.DataTypes.STRING,
-    },
-    pregunta_57: {
-        type: sequelize_1.DataTypes.ARRAY(sequelize_1.DataTypes.STRING),
-    },
-    pregunta_57_destino_transformadora_local: {
-        type: sequelize_1.DataTypes.STRING,
-    },
-    pregunta_57_destino_transformadora_nacional: {
-        type: sequelize_1.DataTypes.STRING,
-    },
-    pregunta_57_destino_venta_local: {
-        type: sequelize_1.DataTypes.STRING,
-    },
-    pregunta_57_destino_venta_nacional: {
-        type: sequelize_1.DataTypes.STRING,
-    },
-    pregunta_57_otros: {
-        type: sequelize_1.DataTypes.STRING,
-    },
-    pregunta_58: {
-        type: sequelize_1.DataTypes.STRING,
-    },
-    pregunta_59: {
-        type: sequelize_1.DataTypes.STRING,
-    },
-    pregunta_60: {
-        type: sequelize_1.DataTypes.ARRAY(sequelize_1.DataTypes.STRING),
-    },
-    pregunta_60_otros: {
-        type: sequelize_1.DataTypes.STRING,
-    },
-    pregunta_61: {
-        type: sequelize_1.DataTypes.STRING,
-    },
-    pregunta_62: {
-        type: sequelize_1.DataTypes.STRING,
-    },
-    pregunta_63: {
-        type: sequelize_1.DataTypes.STRING,
-    },
-    pregunta_64_energia: {
-        type: sequelize_1.DataTypes.STRING,
-    },
-    pregunta_64_gas: {
-        type: sequelize_1.DataTypes.STRING,
-    },
-    pregunta_64_otro: {
-        type: sequelize_1.DataTypes.STRING,
-    },
-    pregunta_64_otro_valor: {
-        type: sequelize_1.DataTypes.STRING,
-    },
-    pregunta_65: {
-        type: sequelize_1.DataTypes.STRING,
-    },
-    pregunta_65_porque: {
-        type: sequelize_1.DataTypes.STRING,
-    },
-    pregunta_66_yogurt_presentacion: {
-        type: sequelize_1.DataTypes.STRING,
-    },
-    pregunta_66_yogurt_valor: {
-        type: sequelize_1.DataTypes.STRING,
-    },
-    pregunta_66_kumis_presentacion: {
-        type: sequelize_1.DataTypes.STRING,
-    },
-    pregunta_66_kumis_valor: {
-        type: sequelize_1.DataTypes.STRING,
-    },
-    pregunta_66_cuajada_presentacion: {
-        type: sequelize_1.DataTypes.STRING,
-    },
-    pregunta_66_cuajada_valor: {
-        type: sequelize_1.DataTypes.STRING,
-    },
-    pregunta_66_queso_doble_crema_presentacion: {
-        type: sequelize_1.DataTypes.STRING,
-    },
-    pregunta_66_queso_doble_crema_valor: {
-        type: sequelize_1.DataTypes.STRING,
-    },
-    pregunta_66_queso_campesino_presentacion: {
-        type: sequelize_1.DataTypes.STRING,
-    },
-    pregunta_66_queso_campesino_valor: {
-        type: sequelize_1.DataTypes.STRING,
-    },
-    pregunta_66_leche_presentacion: {
-        type: sequelize_1.DataTypes.STRING,
-    },
-    pregunta_66_leche_valor: {
-        type: sequelize_1.DataTypes.STRING,
-    },
-    pregunta_66_quesos_madurados_presentacion: {
-        type: sequelize_1.DataTypes.STRING,
-    },
-    pregunta_66_quesos_madurados_valor: {
-        type: sequelize_1.DataTypes.STRING,
-    },
-    pregunta_66_requeson_presentacion: {
-        type: sequelize_1.DataTypes.STRING,
-    },
-    pregunta_66_requeson_valor: {
-        type: sequelize_1.DataTypes.STRING,
-    },
-    pregunta_66_arequipe_presentacion: {
-        type: sequelize_1.DataTypes.STRING,
-    },
-    pregunta_66_arequipe_valor: {
-        type: sequelize_1.DataTypes.STRING,
-    },
-    pregunta_66_otros: {
-        type: sequelize_1.DataTypes.STRING,
-    },
-    observaciones: {
-        type: sequelize_1.DataTypes.STRING,
-    },
-    fecha: {
-        type: sequelize_1.DataTypes.STRING,
-    },
-    nombre_encuestado: {
-        type: sequelize_1.DataTypes.STRING,
-    },
-    cedula_encuestado: {
-        type: sequelize_1.DataTypes.STRING,
-    },
-    firma_encuestado: {
-        type: sequelize_1.DataTypes.STRING,
-    },
-    nombre_encuestador: {
-        type: sequelize_1.DataTypes.STRING,
-    },
-    cedula_encuestador: {
-        type: sequelize_1.DataTypes.STRING,
-    },
-    firma_encuestador: {
-        type: sequelize_1.DataTypes.STRING,
-    },
-    foto_encuestado: {
-        type: sequelize_1.DataTypes.STRING,
-    },
+    pregunta_1: { type: sequelize_1.DataTypes.STRING },
+    pregunta_2: { type: sequelize_1.DataTypes.STRING },
+    pregunta_3: { type: sequelize_1.DataTypes.STRING },
+    pregunta_3_otro: { type: sequelize_1.DataTypes.STRING },
+    pregunta_4: { type: sequelize_1.DataTypes.ARRAY(sequelize_1.DataTypes.STRING) },
+    pregunta_5: { type: sequelize_1.DataTypes.STRING },
+    pregunta_6_contacto: { type: sequelize_1.DataTypes.STRING },
+    pregunta_6_numero: { type: sequelize_1.DataTypes.STRING },
+    pregunta_6_correo: { type: sequelize_1.DataTypes.STRING },
+    pregunta_6_contacto_2: { type: sequelize_1.DataTypes.STRING },
+    pregunta_6_numero_2: { type: sequelize_1.DataTypes.STRING },
+    pregunta_6_correo_2: { type: sequelize_1.DataTypes.STRING },
+    pregunta_7: { type: sequelize_1.DataTypes.ARRAY(sequelize_1.DataTypes.STRING) },
+    pregunta_8: { type: sequelize_1.DataTypes.STRING },
+    pregunta_8_direccion: { type: sequelize_1.DataTypes.STRING },
+    pregunta_9: { type: sequelize_1.DataTypes.STRING },
+    pregunta_10: { type: sequelize_1.DataTypes.ARRAY(sequelize_1.DataTypes.STRING) },
+    pregunta_10_otro: { type: sequelize_1.DataTypes.STRING },
+    pregunta_11: { type: sequelize_1.DataTypes.ARRAY(sequelize_1.DataTypes.STRING) },
+    pregunta_11_otro: { type: sequelize_1.DataTypes.STRING },
+    pregunta_12: { type: sequelize_1.DataTypes.ARRAY(sequelize_1.DataTypes.STRING) },
+    pregunta_12_otro: { type: sequelize_1.DataTypes.STRING },
+    pregunta_13: { type: sequelize_1.DataTypes.ARRAY(sequelize_1.DataTypes.STRING) },
+    pregunta_13_otro: { type: sequelize_1.DataTypes.STRING },
+    pregunta_14: { type: sequelize_1.DataTypes.ARRAY(sequelize_1.DataTypes.STRING) },
+    pregunta_14_asociados_cuantos: { type: sequelize_1.DataTypes.STRING },
+    pregunta_14_externos_cuantos: { type: sequelize_1.DataTypes.STRING },
+    pregunta_15: { type: sequelize_1.DataTypes.STRING },
+    pregunta_15_cuantos: { type: sequelize_1.DataTypes.STRING },
+    pregunta_16: { type: sequelize_1.DataTypes.STRING },
+    pregunta_16_cuantos: { type: sequelize_1.DataTypes.STRING },
+    pregunta_17: { type: sequelize_1.DataTypes.ARRAY(sequelize_1.DataTypes.STRING) },
+    pregunta_17_practicas_ordeno_cuantos: { type: sequelize_1.DataTypes.STRING },
+    pregunta_17_practicas_ganaderas_cuantos: { type: sequelize_1.DataTypes.STRING },
+    pregunta_17_vacunacion_cuantos: { type: sequelize_1.DataTypes.STRING },
+    pregunta_17_brucela_tuberculosis_cuantos: { type: sequelize_1.DataTypes.STRING },
+    pregunta_17_otro: { type: sequelize_1.DataTypes.STRING },
+    pregunta_17_otro_cuantos: { type: sequelize_1.DataTypes.STRING },
+    pregunta_18: { type: sequelize_1.DataTypes.ARRAY(sequelize_1.DataTypes.STRING) },
+    pregunta_19: { type: sequelize_1.DataTypes.ARRAY(sequelize_1.DataTypes.STRING) },
+    pregunta_20: { type: sequelize_1.DataTypes.STRING },
+    pregunta_21_n_grados: { type: sequelize_1.DataTypes.STRING },
+    pregunta_21_n_minutos: { type: sequelize_1.DataTypes.STRING },
+    pregunta_21_n_segundos: { type: sequelize_1.DataTypes.STRING },
+    pregunta_21_w_grados: { type: sequelize_1.DataTypes.STRING },
+    pregunta_21_w_minutos: { type: sequelize_1.DataTypes.STRING },
+    pregunta_21_w_segundos: { type: sequelize_1.DataTypes.STRING },
+    pregunta_22: { type: sequelize_1.DataTypes.STRING },
+    pregunta_23: { type: sequelize_1.DataTypes.ARRAY(sequelize_1.DataTypes.STRING) },
+    pregunta_23_otro: { type: sequelize_1.DataTypes.STRING },
+    pregunta_24_yogurt_diaria: { type: sequelize_1.DataTypes.STRING },
+    pregunta_24_yogurt_semanal: { type: sequelize_1.DataTypes.STRING },
+    pregunta_24_yogurt_mensual: { type: sequelize_1.DataTypes.STRING },
+    pregunta_24_yogurt_rendimiento: { type: sequelize_1.DataTypes.STRING },
+    pregunta_24_yogurt_vida_util: { type: sequelize_1.DataTypes.STRING },
+    pregunta_24_kumis_diaria: { type: sequelize_1.DataTypes.STRING },
+    pregunta_24_kumis_semanal: { type: sequelize_1.DataTypes.STRING },
+    pregunta_24_kumis_mensual: { type: sequelize_1.DataTypes.STRING },
+    pregunta_24_kumis_rendimiento: { type: sequelize_1.DataTypes.STRING },
+    pregunta_24_kumis_vida_util: { type: sequelize_1.DataTypes.STRING },
+    pregunta_24_cuajada_diaria: { type: sequelize_1.DataTypes.STRING },
+    pregunta_24_cuajada_semanal: { type: sequelize_1.DataTypes.STRING },
+    pregunta_24_cuajada_mensual: { type: sequelize_1.DataTypes.STRING },
+    pregunta_24_cuajada_rendimiento: { type: sequelize_1.DataTypes.STRING },
+    pregunta_24_cuajada_vida_util: { type: sequelize_1.DataTypes.STRING },
+    pregunta_24_queso_doble_crema_diaria: { type: sequelize_1.DataTypes.STRING },
+    pregunta_24_queso_doble_crema_semanal: { type: sequelize_1.DataTypes.STRING },
+    pregunta_24_queso_doble_crema_mensual: { type: sequelize_1.DataTypes.STRING },
+    pregunta_24_queso_doble_crema_rendimiento: { type: sequelize_1.DataTypes.STRING },
+    pregunta_24_queso_doble_crema_vida_util: { type: sequelize_1.DataTypes.STRING },
+    pregunta_24_queso_campesino_diaria: { type: sequelize_1.DataTypes.STRING },
+    pregunta_24_queso_campesino_semanal: { type: sequelize_1.DataTypes.STRING },
+    pregunta_24_queso_campesino_mensual: { type: sequelize_1.DataTypes.STRING },
+    pregunta_24_queso_campesino_rendimiento: { type: sequelize_1.DataTypes.STRING },
+    pregunta_24_queso_campesino_vida_util: { type: sequelize_1.DataTypes.STRING },
+    pregunta_24_leche_diaria: { type: sequelize_1.DataTypes.STRING },
+    pregunta_24_leche_semanal: { type: sequelize_1.DataTypes.STRING },
+    pregunta_24_leche_mensual: { type: sequelize_1.DataTypes.STRING },
+    pregunta_24_leche_rendimiento: { type: sequelize_1.DataTypes.STRING },
+    pregunta_24_leche_vida_util: { type: sequelize_1.DataTypes.STRING },
+    pregunta_24_quesos_madurados_diaria: { type: sequelize_1.DataTypes.STRING },
+    pregunta_24_quesos_madurados_semanal: { type: sequelize_1.DataTypes.STRING },
+    pregunta_24_quesos_madurados_mensual: { type: sequelize_1.DataTypes.STRING },
+    pregunta_24_quesos_madurados_rendimiento: { type: sequelize_1.DataTypes.STRING },
+    pregunta_24_quesos_madurados_vida_util: { type: sequelize_1.DataTypes.STRING },
+    pregunta_24_requeson_diaria: { type: sequelize_1.DataTypes.STRING },
+    pregunta_24_requeson_semanal: { type: sequelize_1.DataTypes.STRING },
+    pregunta_24_requeson_mensual: { type: sequelize_1.DataTypes.STRING },
+    pregunta_24_requeson_rendimiento: { type: sequelize_1.DataTypes.STRING },
+    pregunta_24_requeson_vida_util: { type: sequelize_1.DataTypes.STRING },
+    pregunta_24_arequipe_diaria: { type: sequelize_1.DataTypes.STRING },
+    pregunta_24_arequipe_semanal: { type: sequelize_1.DataTypes.STRING },
+    pregunta_24_arequipe_mensual: { type: sequelize_1.DataTypes.STRING },
+    pregunta_24_arequipe_rendimiento: { type: sequelize_1.DataTypes.STRING },
+    pregunta_24_arequipe_vida_util: { type: sequelize_1.DataTypes.STRING },
+    pregunta_24_leche_pasteurizada_diaria: { type: sequelize_1.DataTypes.STRING },
+    pregunta_24_leche_pasteurizada_semanal: { type: sequelize_1.DataTypes.STRING },
+    pregunta_24_leche_pasteurizada_mensual: { type: sequelize_1.DataTypes.STRING },
+    pregunta_24_leche_pasteurizada_rendimiento: { type: sequelize_1.DataTypes.STRING },
+    pregunta_24_leche_pasteurizada_vida_util: { type: sequelize_1.DataTypes.STRING },
+    pregunta_24_leche_UHT_diaria: { type: sequelize_1.DataTypes.STRING },
+    pregunta_24_leche_UHT_semanal: { type: sequelize_1.DataTypes.STRING },
+    pregunta_24_leche_UHT_mensual: { type: sequelize_1.DataTypes.STRING },
+    pregunta_24_leche_UHT_rendimiento: { type: sequelize_1.DataTypes.STRING },
+    pregunta_24_leche_UHT_vida_util: { type: sequelize_1.DataTypes.STRING },
+    pregunta_24_postres_diaria: { type: sequelize_1.DataTypes.STRING },
+    pregunta_24_postres_semanal: { type: sequelize_1.DataTypes.STRING },
+    pregunta_24_postres_mensual: { type: sequelize_1.DataTypes.STRING },
+    pregunta_24_postres_rendimiento: { type: sequelize_1.DataTypes.STRING },
+    pregunta_24_postres_vida_util: { type: sequelize_1.DataTypes.STRING },
+    pregunta_24_helados_diaria: { type: sequelize_1.DataTypes.STRING },
+    pregunta_24_helados_semanal: { type: sequelize_1.DataTypes.STRING },
+    pregunta_24_helados_mensual: { type: sequelize_1.DataTypes.STRING },
+    pregunta_24_helados_rendimiento: { type: sequelize_1.DataTypes.STRING },
+    pregunta_24_helados_vida_util: { type: sequelize_1.DataTypes.STRING },
+    pregunta_24_crema_de_leche_diaria: { type: sequelize_1.DataTypes.STRING },
+    pregunta_24_crema_de_leche_semanal: { type: sequelize_1.DataTypes.STRING },
+    pregunta_24_crema_de_leche_mensual: { type: sequelize_1.DataTypes.STRING },
+    pregunta_24_crema_de_leche_rendimiento: { type: sequelize_1.DataTypes.STRING },
+    pregunta_24_crema_de_leche_vida_util: { type: sequelize_1.DataTypes.STRING },
+    pregunta_24_queso_mozzarella_diaria: { type: sequelize_1.DataTypes.STRING },
+    pregunta_24_queso_mozzarella_semanal: { type: sequelize_1.DataTypes.STRING },
+    pregunta_24_queso_mozzarella_mensual: { type: sequelize_1.DataTypes.STRING },
+    pregunta_24_queso_mozzarella_rendimiento: { type: sequelize_1.DataTypes.STRING },
+    pregunta_24_queso_mozzarella_vida_util: { type: sequelize_1.DataTypes.STRING },
+    pregunta_25: { type: sequelize_1.DataTypes.ARRAY(sequelize_1.DataTypes.STRING) },
+    pregunta_25_otro: { type: sequelize_1.DataTypes.STRING },
+    pregunta_26: { type: sequelize_1.DataTypes.STRING },
+    pregunta_27: { type: sequelize_1.DataTypes.STRING },
+    pregunta_28: { type: sequelize_1.DataTypes.STRING },
+    pregunta_29: { type: sequelize_1.DataTypes.STRING },
+    pregunta_30: { type: sequelize_1.DataTypes.STRING },
+    pregunta_31: { type: sequelize_1.DataTypes.STRING },
+    pregunta_32: { type: sequelize_1.DataTypes.STRING },
+    pregunta_33: { type: sequelize_1.DataTypes.STRING },
+    pregunta_33_otro: { type: sequelize_1.DataTypes.STRING },
+    pregunta_34: { type: sequelize_1.DataTypes.ARRAY(sequelize_1.DataTypes.STRING) },
+    pregunta_34_otro: { type: sequelize_1.DataTypes.STRING },
+    pregunta_35: { type: sequelize_1.DataTypes.ARRAY(sequelize_1.DataTypes.STRING) },
+    pregunta_35_otro: { type: sequelize_1.DataTypes.STRING },
+    pregunta_36: { type: sequelize_1.DataTypes.STRING },
+    pregunta_36_cuales: { type: sequelize_1.DataTypes.ARRAY(sequelize_1.DataTypes.STRING) },
+    pregunta_37: { type: sequelize_1.DataTypes.STRING },
+    pregunta_37_calificacion: { type: sequelize_1.DataTypes.ARRAY(sequelize_1.DataTypes.STRING) },
+    pregunta_38: { type: sequelize_1.DataTypes.STRING },
+    pregunta_39: { type: sequelize_1.DataTypes.STRING },
+    pregunta_40: { type: sequelize_1.DataTypes.STRING },
+    pregunta_40_cuales: { type: sequelize_1.DataTypes.ARRAY(sequelize_1.DataTypes.STRING) },
+    pregunta_41: { type: sequelize_1.DataTypes.STRING },
+    pregunta_41_cuales: { type: sequelize_1.DataTypes.STRING },
+    pregunta_42: { type: sequelize_1.DataTypes.STRING },
+    pregunta_42_como: { type: sequelize_1.DataTypes.STRING },
+    pregunta_43_microbiologicas: { type: sequelize_1.DataTypes.STRING },
+    pregunta_43_microbiologicas_cuales: { type: sequelize_1.DataTypes.STRING },
+    pregunta_43_fisicoquimica: { type: sequelize_1.DataTypes.STRING },
+    pregunta_43_fisicoquimica_cuales: { type: sequelize_1.DataTypes.STRING },
+    pregunta_43_organolepticas: { type: sequelize_1.DataTypes.STRING },
+    pregunta_43_organolepticas_cuales: { type: sequelize_1.DataTypes.STRING },
+    pregunta_44: { type: sequelize_1.DataTypes.STRING },
+    pregunta_44_como: { type: sequelize_1.DataTypes.STRING },
+    pregunta_45: { type: sequelize_1.DataTypes.ARRAY(sequelize_1.DataTypes.STRING) },
+    pregunta_45_otro: { type: sequelize_1.DataTypes.STRING },
+    pregunta_46: { type: sequelize_1.DataTypes.STRING },
+    pregunta_46_cuales: { type: sequelize_1.DataTypes.STRING },
+    pregunta_47: { type: sequelize_1.DataTypes.STRING },
+    pregunta_47_cual: { type: sequelize_1.DataTypes.STRING },
+    pregunta_48: { type: sequelize_1.DataTypes.STRING },
+    pregunta_48_cuales: { type: sequelize_1.DataTypes.STRING },
+    pregunta_49: { type: sequelize_1.DataTypes.STRING },
+    pregunta_49_cual: { type: sequelize_1.DataTypes.STRING },
+    pregunta_50: { type: sequelize_1.DataTypes.STRING },
+    pregunta_50_cual: { type: sequelize_1.DataTypes.STRING },
+    pregunta_51: { type: sequelize_1.DataTypes.STRING },
+    pregunta_51_cual: { type: sequelize_1.DataTypes.STRING },
+    pregunta_52: { type: sequelize_1.DataTypes.STRING },
+    pregunta_52_cual: { type: sequelize_1.DataTypes.STRING },
+    pregunta_52_entidad: { type: sequelize_1.DataTypes.STRING },
+    pregunta_53: { type: sequelize_1.DataTypes.STRING },
+    pregunta_54: { type: sequelize_1.DataTypes.STRING },
+    pregunta_55: { type: sequelize_1.DataTypes.STRING },
+    pregunta_56: { type: sequelize_1.DataTypes.STRING },
+    pregunta_57: { type: sequelize_1.DataTypes.STRING },
+    pregunta_57_cuales: { type: sequelize_1.DataTypes.STRING },
+    pregunta_58: { type: sequelize_1.DataTypes.STRING },
+    pregunta_58_cuales: { type: sequelize_1.DataTypes.STRING },
+    pregunta_59: { type: sequelize_1.DataTypes.ARRAY(sequelize_1.DataTypes.STRING) },
+    pregunta_59_destino_transformadora_local: { type: sequelize_1.DataTypes.STRING },
+    pregunta_59_destino_transformadora_nacional: { type: sequelize_1.DataTypes.STRING },
+    pregunta_59_destino_venta_local: { type: sequelize_1.DataTypes.STRING },
+    pregunta_59_destino_venta_nacional: { type: sequelize_1.DataTypes.STRING },
+    pregunta_59_otros: { type: sequelize_1.DataTypes.STRING },
+    pregunta_60: { type: sequelize_1.DataTypes.STRING },
+    pregunta_61: { type: sequelize_1.DataTypes.STRING },
+    pregunta_61_cuales: { type: sequelize_1.DataTypes.STRING },
+    pregunta_62: { type: sequelize_1.DataTypes.STRING },
+    pregunta_63: { type: sequelize_1.DataTypes.STRING },
+    pregunta_64: { type: sequelize_1.DataTypes.STRING },
+    pregunta_64_porque: { type: sequelize_1.DataTypes.STRING },
+    pregunta_65: { type: sequelize_1.DataTypes.STRING },
+    pregunta_65_porque: { type: sequelize_1.DataTypes.STRING },
+    pregunta_66_yogurt_presentacion: { type: sequelize_1.DataTypes.STRING },
+    pregunta_66_yogurt_valor: { type: sequelize_1.DataTypes.STRING },
+    pregunta_66_kumis_presentacion: { type: sequelize_1.DataTypes.STRING },
+    pregunta_66_kumis_valor: { type: sequelize_1.DataTypes.STRING },
+    pregunta_66_cuajada_presentacion: { type: sequelize_1.DataTypes.STRING },
+    pregunta_66_cuajada_valor: { type: sequelize_1.DataTypes.STRING },
+    pregunta_66_queso_doble_crema_presentacion: { type: sequelize_1.DataTypes.STRING },
+    pregunta_66_queso_doble_crema_valor: { type: sequelize_1.DataTypes.STRING },
+    pregunta_66_queso_campesino_presentacion: { type: sequelize_1.DataTypes.STRING },
+    pregunta_66_queso_campesino_valor: { type: sequelize_1.DataTypes.STRING },
+    pregunta_66_leche_presentacion: { type: sequelize_1.DataTypes.STRING },
+    pregunta_66_leche_valor: { type: sequelize_1.DataTypes.STRING },
+    pregunta_66_quesos_madurados_presentacion: { type: sequelize_1.DataTypes.STRING },
+    pregunta_66_quesos_madurados_valor: { type: sequelize_1.DataTypes.STRING },
+    pregunta_66_requeson_presentacion: { type: sequelize_1.DataTypes.STRING },
+    pregunta_66_requeson_valor: { type: sequelize_1.DataTypes.STRING },
+    pregunta_66_arequipe_presentacion: { type: sequelize_1.DataTypes.STRING },
+    pregunta_66_arequipe_valor: { type: sequelize_1.DataTypes.STRING },
+    pregunta_66_leche_pasteurizada_presentacion: { type: sequelize_1.DataTypes.STRING },
+    pregunta_66_leche_pasteurizada_valor: { type: sequelize_1.DataTypes.STRING },
+    pregunta_66_leche_UHT_presentacion: { type: sequelize_1.DataTypes.STRING },
+    pregunta_66_leche_UHT_valor: { type: sequelize_1.DataTypes.STRING },
+    pregunta_66_postres_presentacion: { type: sequelize_1.DataTypes.STRING },
+    pregunta_66_postres_valor: { type: sequelize_1.DataTypes.STRING },
+    pregunta_66_helados_presentacion: { type: sequelize_1.DataTypes.STRING },
+    pregunta_66_helados_valor: { type: sequelize_1.DataTypes.STRING },
+    pregunta_66_crema_de_leche_presentacion: { type: sequelize_1.DataTypes.STRING },
+    pregunta_66_crema_de_leche_valor: { type: sequelize_1.DataTypes.STRING },
+    pregunta_66_queso_mozzarella_presentacion: { type: sequelize_1.DataTypes.STRING },
+    pregunta_66_queso_mozzarella_valor: { type: sequelize_1.DataTypes.STRING },
+    pregunta_67: { type: sequelize_1.DataTypes.STRING },
+    pregunta_67_distribucion: { type: sequelize_1.DataTypes.STRING },
+    pregunta_67_distribucion_quien: { type: sequelize_1.DataTypes.STRING },
+    pregunta_68_energia: { type: sequelize_1.DataTypes.STRING },
+    pregunta_68_gas: { type: sequelize_1.DataTypes.STRING },
+    pregunta_68_agua: { type: sequelize_1.DataTypes.STRING },
+    pregunta_68_internet: { type: sequelize_1.DataTypes.STRING },
+    pregunta_68_telefonia: { type: sequelize_1.DataTypes.STRING },
+    pregunta_68_otro: { type: sequelize_1.DataTypes.STRING },
+    pregunta_68_otro_valor: { type: sequelize_1.DataTypes.STRING },
+    observaciones: { type: sequelize_1.DataTypes.STRING },
+    fecha: { type: sequelize_1.DataTypes.STRING },
+    nombre_encuestado: { type: sequelize_1.DataTypes.STRING },
+    cedula_encuestado: { type: sequelize_1.DataTypes.STRING },
+    firma_encuestado: { type: sequelize_1.DataTypes.STRING },
+    nombre_encuestador: { type: sequelize_1.DataTypes.STRING },
+    cedula_encuestador: { type: sequelize_1.DataTypes.STRING },
+    firma_encuestador: { type: sequelize_1.DataTypes.STRING },
+    foto_encuestado: { type: sequelize_1.DataTypes.STRING },
 }, {
     timestamps: false,
 });
