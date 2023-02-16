@@ -1,0 +1,12 @@
+.navBar {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 150px;
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+
+

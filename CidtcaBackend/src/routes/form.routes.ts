@@ -2,7 +2,7 @@ import { Router } from 'express';
 import { getForm } from '../controllers/getForm.controller';
 import { getForms } from '../controllers/getForms.controller';
 import { createForm } from '../controllers/createForm.controller';
-import { patchForms } from './../controllers/patchForm.controller';
+import { patchForms } from '../controllers/patchForm.controller';
 import { deleteForm } from '../controllers/deleteForm.controller';
 
 const router = Router();

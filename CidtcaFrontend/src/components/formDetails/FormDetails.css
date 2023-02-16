@@ -1,0 +1,64 @@
+.button_back {
+  position: fixed;
+  left: 20px;
+  top: 20px;
+}
+.containerPrincipalPop {
+  width: 75%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.containerPrincipalPop label {
+  color: white;
+}
+
+.container_details {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  border: 1px solid gainsboro;
+  border-radius: 10px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 10px;
+  width: 100%;
+  background-color: #ffffff;
+}
+
+.container_details h1 {
+  font-weight: bold;
+}
+
+.container_details p {
+  font-size: x-large;
+}
+
+.container_details ul {
+  font-size: x-large;
+}
+
+.container_details b {
+  margin-right: 5px;
+}
+
+.container_observations {
+  display: flex;
+  flex-direction: column;
+}
+
+.container_data {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.container_data img {
+  margin: 10px;
+  width: 20rem;
+  border: 1px solid black;
+  height: 8rem;
+  object-fit: scale-down;
+}
