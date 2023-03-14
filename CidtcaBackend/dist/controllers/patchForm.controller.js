@@ -14,21 +14,27 @@ const Form_1 = require("../models/Form");
 const patchForms = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const { id } = req.params;
-        const { pregunta_23, pregunta_23_gps_n, pregunta_23_gps_w, pregunta_24 } = req.body;
+        const { pregunta_20, pregunta_21_n_grados, pregunta_21_n_minutos, pregunta_21_n_segundos, pregunta_21_w_grados, pregunta_21_w_minutos, pregunta_21_w_segundos, pregunta_22, } = req.body;
         const findForm = yield Form_1.Form.findByPk(id);
         if (!findForm)
             return res.status(404).json({ msg: 'Form not found' });
         const fields = {};
-        if (pregunta_23)
-            fields.pregunta_23 = pregunta_23;
-        if (pregunta_23_gps_n && pregunta_23_gps_w) {
-            fields.pregunta_23_gps = `N: ${pregunta_23_gps_n} W: ${pregunta_23_gps_w}`;
-        }
-        else {
-            throw new Error('bad request.');
-        }
-        if (pregunta_24)
-            fields.pregunta_24 = pregunta_24;
+        if (pregunta_20)
+            fields.pregunta_20 = pregunta_20;
+        if (pregunta_21_n_grados)
+            fields.pregunta_21_n_grados = pregunta_21_n_grados;
+        if (pregunta_21_n_minutos)
+            fields.pregunta_21_n_minutos = pregunta_21_n_minutos;
+        if (pregunta_21_n_segundos)
+            fields.pregunta_21_n_segundos = pregunta_21_n_segundos;
+        if (pregunta_21_w_grados)
+            fields.pregunta_21_w_grados = pregunta_21_w_grados;
+        if (pregunta_21_w_minutos)
+            fields.pregunta_21_w_minutos = pregunta_21_w_minutos;
+        if (pregunta_21_w_segundos)
+            fields.pregunta_21_w_segundos = pregunta_21_w_segundos;
+        if (pregunta_22)
+            fields.pregunta_22 = pregunta_22;
         if (Object.entries(fields).length === 0)
             throw new Error('Not enough info');
         yield findForm.update(fields);

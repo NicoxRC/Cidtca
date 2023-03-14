@@ -296,7 +296,6 @@ const createForm = (req, res) => __awaiter(void 0, void 0, void 0, function* () 
             let url = imageUploaded.url;
             newForm.foto_encuestado = url;
         }
-        console.log(newForm);
         const formComplete = yield Form_1.Form.create(newForm);
         res.status(201).json(formComplete);
     }

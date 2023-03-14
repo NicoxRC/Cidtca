@@ -537,8 +537,6 @@ export const createForm = async (req: Request, res: Response) => {
       let url = imageUploaded.url;
       newForm.foto_encuestado = url;
     }
-
-    console.log(newForm);
     const formComplete = await Form.create(newForm);
     res.status(201).json(formComplete);
   } catch (error: any) {

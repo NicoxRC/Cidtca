@@ -44,7 +44,6 @@ export default function FormHome() {
   ];
 
   const handleSubmit = async (values: any) => {
-    console.log(values);
     const res = await postForm(values);
     if (res) {
       Swal.fire({
@@ -465,48 +464,58 @@ export default function FormHome() {
               <label className="form-label">
                 <b>6. Información de Contacto:</b>
               </label>
-              <label>Contacto 1:</label>
-              <Field
-                type="text"
-                name="pregunta_6_contacto"
-                placeholder="Respuesta..."
-                className="form-control form-control-sm w-25"
-              />
-              <label>Numero:</label>
-              <Field
-                type="number"
-                name="pregunta_6_numero"
-                placeholder="Respuesta..."
-                className="form-control form-control-sm w-25"
-              />
-              <label>Correo:</label>
-              <Field
-                type="text"
-                name="pregunta_6_correo"
-                placeholder="Respuesta..."
-                className="form-control form-control-sm w-25"
-              />
-              <label>Contacto 2:</label>
-              <Field
-                type="text"
-                name="pregunta_6_contacto_2"
-                placeholder="Respuesta..."
-                className="form-control form-control-sm w-25"
-              />
-              <label>Numero:</label>
-              <Field
-                type="number"
-                name="pregunta_6_numero_2"
-                placeholder="Respuesta..."
-                className="form-control form-control-sm w-25"
-              />
-              <label>Correo:</label>
-              <Field
-                type="text"
-                name="pregunta_6_correo_2"
-                placeholder="Respuesta..."
-                className="form-control form-control-sm w-25"
-              />
+              <label>
+                <b>Contacto 1:</b>
+              </label>
+              <div className="d-flex mt-2 mb-2">
+                <label>Nombre:</label>
+                <Field
+                  type="text"
+                  name="pregunta_6_contacto"
+                  placeholder="Respuesta..."
+                  className="form-control form-control-sm w-25 ms-2 me-2"
+                />
+                <label>Numero:</label>
+                <Field
+                  type="number"
+                  name="pregunta_6_numero"
+                  placeholder="Respuesta..."
+                  className="form-control form-control-sm w-25 ms-2 me-2"
+                />
+                <label>Correo:</label>
+                <Field
+                  type="text"
+                  name="pregunta_6_correo"
+                  placeholder="Respuesta..."
+                  className="form-control form-control-sm w-25 ms-2 me-2"
+                />
+              </div>
+              <label>
+                <b>Contacto 2:</b>
+              </label>
+              <div className="d-flex mt-2 mb-2">
+                <label>Nombre:</label>
+                <Field
+                  type="text"
+                  name="pregunta_6_contacto_2"
+                  placeholder="Respuesta..."
+                  className="form-control form-control-sm w-25 ms-2 me-2"
+                />
+                <label>Numero:</label>
+                <Field
+                  type="number"
+                  name="pregunta_6_numero_2"
+                  placeholder="Respuesta..."
+                  className="form-control form-control-sm w-25 ms-2 me-2"
+                />
+                <label>Correo:</label>
+                <Field
+                  type="text"
+                  name="pregunta_6_correo_2"
+                  placeholder="Respuesta..."
+                  className="form-control form-control-sm w-25 ms-2 me-2"
+                />
+              </div>
             </div>
             <div className="container_form">
               <label className="form-label">
@@ -1690,6 +1699,15 @@ export default function FormHome() {
                 />{' '}
                 <b>Zona de tratamiento de residuos</b>
               </label>
+              <label className="form-label">
+                <Field
+                  type="checkbox"
+                  name="pregunta_34"
+                  value="baños y vestier"
+                  className="form-check-input"
+                />{' '}
+                <b>Baños y vestier</b>
+              </label>
               <label className="form-label">Otro:</label>
               <Field
                 type="text"
@@ -1730,7 +1748,7 @@ export default function FormHome() {
                   value="ecomilk lactoscan"
                   className="form-check-input"
                 />{' '}
-                <b>Ecomilk Lactoscan</b>
+                <b>Ekomilk Lactoscan</b>
               </label>
               <label className="form-label">
                 <Field
@@ -2929,7 +2947,7 @@ export default function FormHome() {
                 <option value="Si">Si</option>
                 <option value="No">No</option>
               </Field>
-              <label className="form-label">Porque</label>
+              <label className="form-label">¿Por que?</label>
               <Field
                 type="text"
                 name="pregunta_64_porque"
