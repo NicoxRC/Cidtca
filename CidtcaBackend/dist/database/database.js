@@ -5,17 +5,15 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.sequelize = void 0;
 const sequelize_1 = require("sequelize");
-const dotenv_1 = __importDefault(require("dotenv"));
-dotenv_1.default.config();
-const { DB_USER, DB_PASSWORD, DB_HOST, DB_NAME, DB_PORT } = process.env;
+const index_1 = __importDefault(require("../config/index"));
 exports.sequelize = process.env.NODE_ENV === 'production'
     ? new sequelize_1.Sequelize({
-        database: DB_NAME,
+        database: index_1.default.DB_NAME,
         dialect: 'postgres',
-        host: DB_HOST,
-        port: Number(DB_PORT),
-        username: DB_USER,
-        password: DB_PASSWORD,
+        host: index_1.default.DB_HOST,
+        port: Number(index_1.default.DB_PORT),
+        username: index_1.default.DB_USER,
+        password: index_1.default.DB_PASSWORD,
         pool: {
             max: 3,
             min: 1,
@@ -31,4 +29,4 @@ exports.sequelize = process.env.NODE_ENV === 'production'
         },
         ssl: true,
     })
-    : new sequelize_1.Sequelize(`postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/${DB_NAME}`, { logging: false, native: false });
+    : new sequelize_1.Sequelize(`postgres://${index_1.default.DB_USER}:${index_1.default.DB_PASSWORD}@${index_1.default.DB_HOST}/${index_1.default.DB_NAME}`, { logging: false, native: false });

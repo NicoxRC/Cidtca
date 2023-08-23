@@ -1,7 +1,7 @@
-import { Request, Response } from 'express';
 import { Form } from '../models/Form';
+import type { Request, Response } from 'express';
 
-export const deleteForm = async (req: Request, res: Response) => {
+export = async (req: Request, res: Response): Promise<void> => {
   try {
     const { id } = req.params;
     const deleteForm = await Form.findByPk(id);
@@ -10,8 +10,9 @@ export const deleteForm = async (req: Request, res: Response) => {
 
     await deleteForm.destroy();
     res.status(202).json({ msg: 'accepted.' });
-  } catch (error) {
-    res.status(400).json(error);
+  } catch (error: unknown) {
+    error instanceof Error
+      ? res.status(400).json({ error: error.message })
+      : null;
   }
 };
-

@@ -13,14 +13,12 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.uploadImage = void 0;
-const dotenv_1 = __importDefault(require("dotenv"));
-dotenv_1.default.config();
 const cloudinary_1 = require("cloudinary");
-const { API_KEY, API_SECRET, CLOUD_NAME } = process.env;
+const index_1 = __importDefault(require("../config/index"));
 cloudinary_1.v2.config({
-    cloud_name: CLOUD_NAME,
-    api_key: API_KEY,
-    api_secret: API_SECRET,
+    cloud_name: index_1.default.CLOUD_NAME,
+    api_key: index_1.default.API_KEY,
+    api_secret: index_1.default.API_SECRET,
     secure: true,
 });
 const uploadImage = (filePath) => __awaiter(void 0, void 0, void 0, function* () {

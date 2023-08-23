@@ -8,19 +8,19 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.postUser = void 0;
-const User_1 = require("../models/User");
-const postUser = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+const Form_1 = require("../models/Form");
+module.exports = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        const { user, password } = req.body;
-        if (!user || !password)
-            throw new Error('Bad Request.');
-        const newUser = yield User_1.User.create({ user, password });
-        res.status(202).json(newUser);
+        const { id } = req.params;
+        const deleteForm = yield Form_1.Form.findByPk(id);
+        if (!deleteForm)
+            throw new Error('Bad request.');
+        yield deleteForm.destroy();
+        res.status(202).json({ msg: 'accepted.' });
     }
     catch (error) {
-        res.status(400).json(error);
+        error instanceof Error
+            ? res.status(400).json({ error: error.message })
+            : null;
     }
 });
-exports.postUser = postUser;

@@ -8,16 +8,14 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.patchForms = void 0;
 const Form_1 = require("../models/Form");
-const patchForms = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+module.exports = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const { id } = req.params;
         const { pregunta_20, pregunta_21_n_grados, pregunta_21_n_minutos, pregunta_21_n_segundos, pregunta_21_w_grados, pregunta_21_w_minutos, pregunta_21_w_segundos, pregunta_22, } = req.body;
         const findForm = yield Form_1.Form.findByPk(id);
         if (!findForm)
-            return res.status(404).json({ msg: 'Form not found' });
+            throw new Error('From not found.');
         const fields = {};
         if (pregunta_20)
             fields.pregunta_20 = pregunta_20;
@@ -41,7 +39,8 @@ const patchForms = (req, res) => __awaiter(void 0, void 0, void 0, function* () 
         res.status(200).json(findForm);
     }
     catch (error) {
-        res.status(500).send({ error: error.message });
+        error instanceof Error
+            ? res.status(400).json({ ërror: error.message })
+            : null;
     }
 });
-exports.patchForms = patchForms;

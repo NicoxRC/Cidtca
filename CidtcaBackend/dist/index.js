@@ -13,13 +13,14 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const app_1 = __importDefault(require("./app"));
+const index_1 = __importDefault(require("./config/index"));
 const database_1 = require("./database/database");
 function main() {
     return __awaiter(this, void 0, void 0, function* () {
         try {
             yield database_1.sequelize.sync({ force: false });
-            app_1.default.listen(process.env.PORT, () => {
-                console.log('listening on port', process.env.PORT);
+            app_1.default.listen(index_1.default.PORT, () => {
+                console.log('listening on port', index_1.default.PORT);
             });
         }
         catch (error) {

@@ -8,20 +8,19 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.getForm = void 0;
-const Form_1 = require("../models/Form");
-const getForm = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    const { id } = req.params;
-    let findedForm;
+const User_1 = require("../models/User");
+module.exports = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        findedForm = yield Form_1.Form.findByPk(id);
-        if (!findedForm)
-            throw new Error('Not found.');
-        res.status(200).json(findedForm);
+        const { user, password } = req.query;
+        const users = yield User_1.User.findAll();
+        if (users[0].user !== user || users[0].password !== password) {
+            throw new Error('Not Found.');
+        }
+        res.status(200).json(users);
     }
     catch (error) {
-        res.status(404).json({ error: error.message });
+        error instanceof Error
+            ? res.status(400).json({ error: error.message })
+            : null;
     }
 });
-exports.getForm = getForm;

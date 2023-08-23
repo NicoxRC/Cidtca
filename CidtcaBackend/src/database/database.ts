@@ -1,17 +1,15 @@
 import { Sequelize } from 'sequelize';
-import dotenv from 'dotenv';
-dotenv.config();
-const { DB_USER, DB_PASSWORD, DB_HOST, DB_NAME, DB_PORT } = process.env;
+import store from '../config/index';
 
 export let sequelize: any =
   process.env.NODE_ENV === 'production'
     ? new Sequelize({
-        database: DB_NAME,
+        database: store.DB_NAME,
         dialect: 'postgres',
-        host: DB_HOST,
-        port: Number(DB_PORT),
-        username: DB_USER,
-        password: DB_PASSWORD,
+        host: store.DB_HOST,
+        port: Number(store.DB_PORT),
+        username: store.DB_USER,
+        password: store.DB_PASSWORD,
         pool: {
           max: 3,
           min: 1,
@@ -28,6 +26,6 @@ export let sequelize: any =
         ssl: true,
       })
     : new Sequelize(
-        `postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/${DB_NAME}`,
+        `postgres://${store.DB_USER}:${store.DB_PASSWORD}@${store.DB_HOST}/${store.DB_NAME}`,
         { logging: false, native: false }
       );

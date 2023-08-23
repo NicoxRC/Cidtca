@@ -1,17 +1,16 @@
-import dotenv from 'dotenv';
-dotenv.config();
-import { v2 as cloudinary } from 'cloudinary';
-
-const { API_KEY, API_SECRET, CLOUD_NAME } = process.env;
+import { UploadApiResponse, v2 as cloudinary } from 'cloudinary';
+import store from '../config/index';
 
 cloudinary.config({
-  cloud_name: CLOUD_NAME,
-  api_key: API_KEY,
-  api_secret: API_SECRET,
+  cloud_name: store.CLOUD_NAME,
+  api_key: store.API_KEY,
+  api_secret: store.API_SECRET,
   secure: true,
 });
 
-export const uploadImage = async (filePath: any) => {
+export const uploadImage = async (
+  filePath: string
+): Promise<UploadApiResponse> => {
   return await cloudinary.uploader.upload(filePath, {
     folder: 'folder',
   });

@@ -1,8 +1,10 @@
 import { Form } from '../models/Form';
-import { Request, Response } from 'express';
 import { uploadImage } from '../cloudinary/cloudinary';
+import type { Request, Response } from 'express';
+import type { UploadApiResponse } from 'cloudinary';
+import type { FormInterface } from '../types/formInterface';
 
-export const createForm = async (req: Request, res: Response) => {
+export = async (req: Request, res: Response): Promise<void> => {
   try {
     const {
       pregunta_1,
@@ -256,7 +258,7 @@ export const createForm = async (req: Request, res: Response) => {
       foto_encuestado,
     } = req.body;
 
-    let newForm = {
+    let newForm: FormInterface = {
       pregunta_1,
       pregunta_2,
       pregunta_3,
@@ -509,37 +511,51 @@ export const createForm = async (req: Request, res: Response) => {
     };
 
     if (typeof firma_encuestado === 'string' && firma_encuestado.length > 0) {
-      const imageUploaded = await uploadImage(firma_encuestado);
-      let url = imageUploaded.url;
+      const imageUploaded: UploadApiResponse = await uploadImage(
+        firma_encuestado
+      );
+      let url: string = imageUploaded.url;
       newForm.firma_encuestado = url;
     } else if (Array.isArray(firma_encuestado)) {
-      const imageUploaded = await uploadImage(firma_encuestado[0]);
-      let url = imageUploaded.url;
+      const imageUploaded: UploadApiResponse = await uploadImage(
+        firma_encuestado[0]
+      );
+      let url: string = imageUploaded.url;
       newForm.firma_encuestado = url;
     }
 
     if (typeof firma_encuestador === 'string' && firma_encuestador.length > 0) {
-      const imageUploaded = await uploadImage(firma_encuestador);
-      let url = imageUploaded.url;
+      const imageUploaded: UploadApiResponse = await uploadImage(
+        firma_encuestador
+      );
+      let url: string = imageUploaded.url;
       newForm.firma_encuestador = url;
     } else if (Array.isArray(firma_encuestador)) {
-      const imageUploaded = await uploadImage(firma_encuestador[0]);
-      let url = imageUploaded.url;
+      const imageUploaded: UploadApiResponse = await uploadImage(
+        firma_encuestador[0]
+      );
+      let url: string = imageUploaded.url;
       newForm.firma_encuestador = url;
     }
 
     if (typeof foto_encuestado === 'string' && foto_encuestado.length > 0) {
-      const imageUploaded = await uploadImage(foto_encuestado);
-      let url = imageUploaded.url;
+      const imageUploaded: UploadApiResponse = await uploadImage(
+        foto_encuestado
+      );
+      let url: string = imageUploaded.url;
       newForm.foto_encuestado = url;
     } else if (Array.isArray(foto_encuestado)) {
-      const imageUploaded = await uploadImage(foto_encuestado[0]);
-      let url = imageUploaded.url;
+      const imageUploaded: UploadApiResponse = await uploadImage(
+        foto_encuestado[0]
+      );
+      let url: string = imageUploaded.url;
       newForm.foto_encuestado = url;
     }
-    const formComplete = await Form.create(newForm);
+    const formComplete: FormInterface = await Form.create(newForm);
     res.status(201).json(formComplete);
-  } catch (error: any) {
-    res.status(400).json({ error: error.message });
+  } catch (error: unknown) {
+    error instanceof Error
+      ? res.status(400).json({ error: error.message })
+      : null;
   }
 };

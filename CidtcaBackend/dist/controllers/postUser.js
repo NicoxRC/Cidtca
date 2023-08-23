@@ -8,16 +8,18 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.getForms = void 0;
-const Form_1 = require("../models/Form");
-const getForms = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+const User_1 = require("../models/User");
+module.exports = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        const forms = yield Form_1.Form.findAll();
-        res.status(200).json(forms);
+        const { user, password } = req.body;
+        if (!user || !password)
+            throw new Error('Bad Request.');
+        const newUser = yield User_1.User.create({ user, password });
+        res.status(202).json(newUser);
     }
     catch (error) {
-        res.status(404).json({ error: error.message });
+        error instanceof Error
+            ? res.status(400).json({ ërror: error.message })
+            : null;
     }
 });
-exports.getForms = getForms;

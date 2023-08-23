@@ -10,15 +10,15 @@ services:
     ports:
       - '5432:5432'
 
-  cidtcaFront:
-    container_name: cidtcaFront
+  cidtcafront:
+    container_name: cidtcafront
     restart: always
     build: ./CidtcaFrontend
     ports:
       - '3000:3000'
 
-  cidtcaBack:
-    container_name: cidtcaBack
+  cidtcafack:
+    container_name: cidtcaback
     restart: always
     build: ./CidtcaBackend
     ports:

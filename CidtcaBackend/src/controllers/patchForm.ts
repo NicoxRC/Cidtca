@@ -1,14 +1,14 @@
-import { Request, Response } from 'express';
 import { Form } from '../models/Form';
+import type { Request, Response } from 'express';
 
-export const patchForms = async (req: Request, res: Response) => {
+export = async (req: Request, res: Response): Promise<void> => {
   try {
     const { id } = req.params;
     const {
       pregunta_20,
       pregunta_21_n_grados,
       pregunta_21_n_minutos,
-      pregunta_21_n_segundos, 
+      pregunta_21_n_segundos,
       pregunta_21_w_grados,
       pregunta_21_w_minutos,
       pregunta_21_w_segundos,
@@ -16,7 +16,7 @@ export const patchForms = async (req: Request, res: Response) => {
     } = req.body;
 
     const findForm = await Form.findByPk(id);
-    if (!findForm) return res.status(404).json({ msg: 'Form not found' });
+    if (!findForm) throw new Error('From not found.');
 
     const fields: any = {};
     if (pregunta_20) fields.pregunta_20 = pregunta_20;
@@ -38,7 +38,9 @@ export const patchForms = async (req: Request, res: Response) => {
 
     await findForm.update(fields);
     res.status(200).json(findForm);
-  } catch (error: any) {
-    res.status(500).send({ error: error.message });
+  } catch (error: unknown) {
+    error instanceof Error
+      ? res.status(400).json({ ërror: error.message })
+      : null;
   }
 };
