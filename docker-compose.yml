@@ -1,0 +1,25 @@
+version: '3'
+services:
+  db:
+    container_name: postgres
+    image: postgres
+    restart: always
+    environment:
+      - POSTGRES_PASSWORD=rojaslopez19
+      - POSTGRES_DB=cidtca
+    ports:
+      - '5432:5432'
+
+  cidtcaFront:
+    container_name: cidtcaFront
+    restart: always
+    build: ./CidtcaFrontend
+    ports:
+      - '3000:3000'
+
+  cidtcaBack:
+    container_name: cidtcaBack
+    restart: always
+    build: ./CidtcaBackend
+    ports:
+      - '3001:3001'
