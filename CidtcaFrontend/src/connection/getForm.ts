@@ -1,10 +1,15 @@
-import axios from "axios";
+import axios from 'axios';
+import { FormInterface } from '../types/formInterface';
 
-export const getForm = async (id: number) => {
+export const getForm = async (id: string): Promise<FormInterface> => {
   try {
-    const response = await axios.get(`/forms/${id}`);
-    return response.data;
-  } catch (error) {
-    return console.log(error);
+    const { data } = await axios.get<FormInterface>(`/forms/${id}`);
+    return data;
+  } catch (error: unknown) {
+    if (error instanceof TypeError) {
+      throw new Error(error.message);
+    } else {
+      throw new Error('Unknown error');
+    }
   }
 };

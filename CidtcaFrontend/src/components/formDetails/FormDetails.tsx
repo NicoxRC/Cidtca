@@ -1,77 +1,23 @@
-import Logo from '../../images/logo2.jpg';
 import Cookies from 'universal-cookie';
-import Swal from 'sweetalert2';
 import Popup from 'reactjs-popup';
-import { Field, Form, Formik } from 'formik';
+import EditForm from '../editForm/EditForm';
+import DeleteForm from '../deleteForm/DeleteForm';
+import Logo from '../../images/logo2.jpg';
 import { useEffect, useState } from 'react';
 import { useHistory, useParams } from 'react-router-dom';
 import { getForm } from '../../connection/getForm';
-import { patchForms } from '../../connection/patchForm';
-import { deleteForm } from '../../connection/deleteForm';
+import type { FormDetailsIdType } from '../../types/types';
+import type { FormInterface } from '../../types/formInterface';
 import './FormDetails.css';
 
 export default function FormDetails(): JSX.Element {
-  const { id }: any = useParams();
-  const [data, setData]: any = useState();
+  const { id } = useParams<FormDetailsIdType>();
+  const [data, setData] = useState<FormInterface>();
+  const cookies: Cookies = new Cookies();
   const history = useHistory();
-  const cookies = new Cookies();
 
-  const handleClickBack = () => {
+  const handleClickBack = (): void => {
     history.push('/home');
-  };
-
-  const handleClickEdit = async (values: any) => {
-    const res = await patchForms(id, values);
-    if (!res.message) {
-      Swal.fire({
-        position: 'top-end',
-        icon: 'success',
-        title: 'El formulario a sido editado',
-        showConfirmButton: false,
-        timer: 1500,
-      });
-      history.push('/home');
-    } else {
-      if (!values.pregunta_23_gps_n || !values.pregunta_23_gps_w) {
-        Swal.fire({
-          icon: 'error',
-          title: 'Oops...',
-          text: 'N y W tienen que llenarse',
-        });
-      } else {
-        Swal.fire({
-          icon: 'error',
-          title: 'Oops...',
-          text: 'No se puedo edtiar el formulario',
-        });
-      }
-    }
-  };
-
-  const handleClickEliminate = () => {
-    Swal.fire({
-      title: 'Estas seguro?',
-      text: 'No se puede revertir.',
-      icon: 'warning',
-      showCancelButton: true,
-      confirmButtonColor: '#3085d6',
-      cancelButtonColor: '#d33',
-      confirmButtonText: 'Si!',
-    }).then((result) => {
-      if (result.isConfirmed) {
-        try {
-          deleteForm(id);
-          Swal.fire('Borrado!', 'Tu archivo ha sido borrado!!', 'success');
-          history.push('/home');
-        } catch (error) {
-          Swal.fire({
-            icon: 'error',
-            title: 'Oops...',
-            text: 'Algo salio mal!',
-          });
-        }
-      }
-    });
   };
 
   useEffect(() => {
@@ -101,123 +47,10 @@ export default function FormDetails(): JSX.Element {
           }
         >
           <div className="containerPrincipalPop">
-            <Formik
-              initialValues={{
-                pregunta_20: '',
-                pregunta_21_n_grados: '',
-                pregunta_21_n_minutos: '',
-                pregunta_21_n_segundos: '',
-                pregunta_21_w_grados: '',
-                pregunta_21_w_minutos: '',
-                pregunta_21_w_segundos: '',
-                pregunta_22: '',
-              }}
-              onSubmit={handleClickEdit}
-            >
-              <Form className="d-flex justify-content-center align-items-center p-5 w-100 m-5 h-100">
-                <div className="container_form bg-dark">
-                  <label className="form-label mt-3">
-                    <b>Temperatura:</b>
-                  </label>
-                  <Field
-                    type="number"
-                    name="pregunta_20"
-                    placeholder="Respuesta..."
-                    className="form-control mt-3"
-                  />
-                  <label className="form-label mt-3">
-                    <b>Georreferenciación</b>
-                  </label>
-                  <label className="form-label mb-2">
-                    <b>Coordenada N:</b>
-                  </label>
-                  <div className="d-flex">
-                    <div>
-                      <label className="form-label">Grados</label>
-                      <Field
-                        type="number"
-                        name="pregunta_21_n_grados"
-                        placeholder="Respuesta..."
-                        className="form-control form-control-sm w-75 me-3"
-                      />
-                    </div>
-                    <div>
-                      <label className="form-label">Minutos</label>
-                      <Field
-                        type="number"
-                        name="pregunta_21_n_minutos"
-                        placeholder="Respuesta..."
-                        className="form-control form-control-sm w-75 me-3"
-                      />
-                    </div>
-                    <div>
-                      <label className="form-label">Segundos</label>
-                      <Field
-                        type="number"
-                        name="pregunta_21_n_segundos"
-                        placeholder="Respuesta..."
-                        className="form-control form-control-sm w-75 me-3"
-                      />
-                    </div>
-                  </div>
-                  <label className="form-label mt-2">
-                    <b>Coordenada W:</b>
-                  </label>
-                  <div className="d-flex">
-                    <div>
-                      <label className="form-label">Grados</label>
-                      <Field
-                        type="number"
-                        name="pregunta_21_w_grados"
-                        placeholder="Respuesta..."
-                        className="form-control form-control-sm w-75 me-3"
-                      />
-                    </div>
-                    <div>
-                      <label className="form-label">Minutos</label>
-                      <Field
-                        type="number"
-                        name="pregunta_21_w_minutos"
-                        placeholder="Respuesta..."
-                        className="form-control form-control-sm w-75 me-3"
-                      />
-                    </div>
-                    <div>
-                      <label className="form-label">Segundos</label>
-                      <Field
-                        type="number"
-                        name="pregunta_21_w_segundos"
-                        placeholder="Respuesta..."
-                        className="form-control form-control-sm w-75 me-3"
-                      />
-                    </div>
-                  </div>
-                  <label className="form-label mt-3">
-                    <b>Altura:</b>
-                  </label>
-                  <Field
-                    type="number"
-                    name="pregunta_22"
-                    placeholder="Respuesta..."
-                    className="form-control mt-3"
-                  />
-                  <button
-                    type="submit"
-                    className="btn btn-success mt-3 mb-3 p-3"
-                  >
-                    Editar
-                  </button>
-                </div>
-              </Form>
-            </Formik>
+            <EditForm id={id} />
           </div>
         </Popup>
-        <button
-          onClick={handleClickEliminate}
-          className="btn btn-outline-danger ms-1 p-2"
-        >
-          Eliminar
-        </button>
+        <DeleteForm id={id} />
       </div>
       {data ? (
         <div className="w-75">

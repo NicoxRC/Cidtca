@@ -5,6 +5,7 @@ import './Cards.css';
 
 export default function Cards(props: CardsPropsType): JSX.Element {
   const { forms } = props;
+
   return (
     <div className="card_container">
       {forms?.map((el: FormInterface) => (
@@ -13,7 +14,7 @@ export default function Cards(props: CardsPropsType): JSX.Element {
           id={el.id}
           foto_encuestado={el.foto_encuestado}
           nombre_encuestado={el.nombre_encuestado}
-          municipio={el.pregunta_7}
+          municipio={el.pregunta_8}
           organizacion={el.pregunta_2}
           organizacion_otro={el.pregunta_3_otro}
         />
