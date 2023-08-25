@@ -1,10 +1,13 @@
 import Card from '../card/Card';
+import type { CardsPropsType } from '../../types/types';
+import type { FormInterface } from '../../types/formInterface';
 import './Cards.css';
 
-export default function Cards({ forms }: any) {
+export default function Cards(props: CardsPropsType): JSX.Element {
+  const { forms } = props;
   return (
     <div className="card_container">
-      {forms?.map((el: any) => (
+      {forms?.map((el: FormInterface) => (
         <Card
           key={el.id}
           id={el.id}
@@ -12,7 +15,7 @@ export default function Cards({ forms }: any) {
           nombre_encuestado={el.nombre_encuestado}
           municipio={el.pregunta_7}
           organizacion={el.pregunta_2}
-          organizacion_otro={el.pregunta_2_otro}
+          organizacion_otro={el.pregunta_3_otro}
         />
       ))}
     </div>

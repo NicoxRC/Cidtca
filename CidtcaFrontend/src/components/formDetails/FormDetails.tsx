@@ -1,16 +1,16 @@
+import Logo from '../../images/logo2.jpg';
+import Cookies from 'universal-cookie';
+import Swal from 'sweetalert2';
+import Popup from 'reactjs-popup';
 import { Field, Form, Formik } from 'formik';
 import { useEffect, useState } from 'react';
 import { useHistory, useParams } from 'react-router-dom';
 import { getForm } from '../../connection/getForm';
 import { patchForms } from '../../connection/patchForm';
 import { deleteForm } from '../../connection/deleteForm';
-import Logo from '../../images/logo2.jpg';
-import Cookies from 'universal-cookie';
-import Swal from 'sweetalert2';
-import Popup from 'reactjs-popup';
 import './FormDetails.css';
 
-export default function FormDetails() {
+export default function FormDetails(): JSX.Element {
   const { id }: any = useParams();
   const [data, setData]: any = useState();
   const history = useHistory();
