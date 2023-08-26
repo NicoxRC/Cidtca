@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { FormInterface } from '../types/formInterface';
+import type { FormInterface } from '../interfaces/form';
 
 export const getForm = async (id: string): Promise<FormInterface> => {
   try {

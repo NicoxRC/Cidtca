@@ -2,7 +2,7 @@ import { Form } from '../models/Form';
 import { uploadImage } from '../cloudinary/cloudinary';
 import type { Request, Response } from 'express';
 import type { UploadApiResponse } from 'cloudinary';
-import type { FormInterface } from '../types/formInterface';
+import type { FormInterface } from '../interfaces/form';
 
 export = async (req: Request, res: Response): Promise<void> => {
   try {

@@ -1,12 +1,3 @@
-export interface CardPropsInterface {
-  id: string;
-  foto_encuestado: string;
-  nombre_encuestado: string;
-  municipio: string;
-  organizacion: string;
-  organizacion_otro: string;
-}
-
 export interface EditaValuesInterface {
   pregunta_20: string;
   pregunta_21_n_grados: string;

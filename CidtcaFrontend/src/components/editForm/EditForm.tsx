@@ -1,11 +1,11 @@
 import Swal from 'sweetalert2';
 import { Field, Form, Formik } from 'formik';
 import { useHistory } from 'react-router-dom';
-import { patchForms } from '../../connection/patchForm';
-import { EditaValuesInterface } from '../../types/interfaces';
+import { patchForms } from '../../services/patchForm';
+import { EditaValuesInterface } from '../../interfaces/editaValuesInterface';
 import { initialValuesEditForm } from '../../utils/initialValuesEditForm';
-import type { FormInterface } from '../../types/formInterface';
-import type { FormDetailsIdType } from '../../types/types';
+import type { FormInterface } from '../../interfaces/form';
+import type { FormDetailsIdType } from '../../types/fromDetailsIdType';
 
 export default function EditForm(props: FormDetailsIdType): JSX.Element {
   const { id } = props;

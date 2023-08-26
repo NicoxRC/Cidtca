@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { getForms } from '../../connection/getForms';
+import { getForms } from '../../services/getForms';
 import { Link, useHistory } from 'react-router-dom';
 import Dropdown from 'react-bootstrap/Dropdown';
 import Cookies from 'universal-cookie';

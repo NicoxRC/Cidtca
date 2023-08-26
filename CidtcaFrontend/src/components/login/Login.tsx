@@ -1,7 +1,7 @@
 import { Formik, Form, Field } from 'formik';
 import { useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
-import { getUser } from '../../connection/getUser';
+import { getUser } from '../../services/getUser';
 import Logo from '../../images/logo2.jpg';
 import Cookies from 'universal-cookie';
 import Swal from 'sweetalert2';

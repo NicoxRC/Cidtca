@@ -6,7 +6,7 @@ import Cookies from 'universal-cookie';
 import { Formik, Form, Field } from 'formik';
 import { useEffect, useRef, useState } from 'react';
 import { useHistory } from 'react-router-dom';
-import { postForm } from '../../connection/postForm';
+import { postForm } from '../../services/postForm';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'reactjs-popup/dist/index.css';
 import './FormHome.css';

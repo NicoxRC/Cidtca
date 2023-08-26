@@ -1,6 +1,6 @@
 import Card from '../card/Card';
-import type { CardsPropsType } from '../../types/types';
-import type { FormInterface } from '../../types/formInterface';
+import type { FormInterface } from '../../interfaces/form';
+import type { CardsPropsType } from '../../types/cardsProps';
 import './Cards.css';
 
 export default function Cards(props: CardsPropsType): JSX.Element {

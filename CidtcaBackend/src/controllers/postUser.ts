@@ -1,6 +1,6 @@
 import { User } from '../models/User';
 import type { Request, Response } from 'express';
-import type { UserInterface } from '../types/userInterface';
+import type { UserInterface } from '../interfaces/user';
 
 export = async (req: Request, res: Response): Promise<void> => {
   try {
