@@ -15,7 +15,7 @@ export default function Cards(props: CardsPropsType): JSX.Element {
           foto_encuestado={el.foto_encuestado}
           nombre_encuestado={el.nombre_encuestado}
           municipio={el.pregunta_8}
-          organizacion={el.pregunta_2}
+          organizacion={el.pregunta_3}
           organizacion_otro={el.pregunta_3_otro}
         />
       ))}

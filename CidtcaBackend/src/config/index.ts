@@ -9,6 +9,6 @@ export = {
   DB_PORT: process.env.DB_PORT,
   PORT: process.env.PORT,
   API_KEY: process.env.API_KEY,
-  API_SECRET: process.env.API_KEY,
-  CLOUD_NAME: process.env.API_KEY,
+  API_SECRET: process.env.API_SECRET,
+  CLOUD_NAME: process.env.CLOUD_NAME,
 };
