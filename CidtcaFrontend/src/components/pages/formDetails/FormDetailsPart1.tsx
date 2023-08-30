@@ -1,10 +1,10 @@
 import { useSelector } from 'react-redux';
-import type { RootState } from '../../app/store';
-import type { FormInterface } from '../../interfaces/form';
+import type { RootState } from '../../../app/store';
+import type { FormInterface } from '../../../interfaces/form';
 
 export default function FormDetailsPart1(): JSX.Element {
   const data = useSelector<RootState, FormInterface>(
-    (state) => state.form.data
+    (state) => state.form.dataDetails
   );
   return (
     <div>
@@ -65,6 +65,32 @@ export default function FormDetailsPart1(): JSX.Element {
             <li>Numero: {data.pregunta_6_numero_2}</li>
             <li>Correo: {data.pregunta_6_correo_2}</li>
           </ul>
+        </p>
+      </div>
+      <div className="container_details">
+        <p>
+          <b>7. Actividad principal:</b>
+          <ul>
+            {data.pregunta_7?.map((el: string) => (
+              <li>{el}</li>
+            ))}
+          </ul>
+        </p>
+      </div>
+      <div className="container_details">
+        <p>
+          <b>8. Municipio:</b>
+          {data.pregunta_8}
+        </p>
+        <p>
+          <b>Direccion:</b>
+          {data.pregunta_8_direccion}
+        </p>
+      </div>
+      <div className="container_details">
+        <p>
+          <b>9. ¿realiza el aporte al fondo nacional del ganado?:</b>
+          {data.pregunta_9}
         </p>
       </div>
     </div>

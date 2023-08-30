@@ -1,13 +1,40 @@
 import { useSelector } from 'react-redux';
-import type { RootState } from '../../app/store';
-import type { FormInterface } from '../../interfaces/form';
+import type { RootState } from '../../../app/store';
+import type { FormInterface } from '../../../interfaces/form';
 
 export default function FormDetailsPart6(): JSX.Element {
   const data = useSelector<RootState, FormInterface>(
-    (state) => state.form.data
+    (state) => state.form.dataDetails
   );
   return (
     <div>
+      <div className="container_details">
+        <h1>
+          CRITERIO 6 CAPACIDAD DE INFRAESTRUCTURA FISICA Y EQUIPOS INSTALADA EN
+          LA PLANTA DE TRANSFORMACION
+        </h1>
+      </div>
+      <div className="container_details">
+        <p>
+          <b>
+            33. ¿Qué tipo de tenencia tiene sobre el predio donde desarrolla la
+            actividad económica?:
+          </b>
+          {data.pregunta_33}
+        </p>
+        {data.pregunta_33_otro ? <p>Otro: {data.pregunta_33_otro}</p> : null}
+      </div>
+      <div className="container_details">
+        <p>
+          <b>34. Zonas de la planta de producción con las que cuenta:</b>
+        </p>
+        <ul>
+          {data.pregunta_34?.map((el: string) => (
+            <li>{el}</li>
+          ))}
+        </ul>
+        {data.pregunta_34_otro ? <p>Otro: {data.pregunta_34_otro}</p> : null}
+      </div>
       <div className="container_details">
         <p>
           <b>35. Maquinaria, equipos y utensilios con los que cuenta:</b>
@@ -99,25 +126,6 @@ export default function FormDetailsPart6(): JSX.Element {
           {data.pregunta_42}
         </p>
         {data.pregunta_42_como ? <p>Como: {data.pregunta_42_como}</p> : null}
-      </div>
-      <div className="container_details">
-        <p>
-          <b>43. Realiza pruebas para la liberación del producto terminado?:</b>
-        </p>
-        <ul>
-          <li>
-            <p>Microbiologicas: {data.pregunta_43_microbiologicas}</p>
-            <p>Cuales: {data.pregunta_43_microbiologicas_cuales}</p>
-          </li>
-          <li>
-            <p>Fisicoquímica: {data.pregunta_43_fisicoquimica}</p>
-            <p>Cuales: {data.pregunta_43_fisicoquimica_cuales}</p>
-          </li>
-          <li>
-            <p>Organolépticas: {data.pregunta_43_organolepticas}</p>
-            <p>Cuales: {data.pregunta_43_organolepticas_cuales}</p>
-          </li>
-        </ul>
       </div>
     </div>
   );

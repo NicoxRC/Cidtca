@@ -1,8 +1,8 @@
 import Cookies from 'universal-cookie';
 import Popup from 'reactjs-popup';
-import EditForm from '../editForm/EditForm';
-import DeleteForm from '../deleteForm/DeleteForm';
-import Logo from '../../images/logo2.jpg';
+import EditForm from '../../editForm/EditForm';
+import DeleteForm from '../../deleteForm/DeleteForm';
+import Logo from '../../../images/logo2.jpg';
 import FormDetailsPart1 from './FormDetailsPart1';
 import FormDetailsPart3 from './FormDetailsPart3';
 import FormDetailsPart2 from './FormDetailsPart2';
@@ -15,17 +15,17 @@ import FormDetailsPart9 from './FormDetailsPart9';
 import { useEffect } from 'react';
 import { useHistory, useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { getFormDetails } from '../../slices/formSlice';
-import type { FormDetailsIdType } from '../../types/fromDetailsIdType';
+import { getFormDetails } from '../../../slices/formSlice';
+import type { FormDetailsIdType } from '../../../types/fromDetailsId';
 import type { Dispatch } from '@reduxjs/toolkit';
-import type { RootState } from '../../app/store';
-import type { FormInterface } from '../../interfaces/form';
+import type { RootState } from '../../../app/store';
+import type { FormInterface } from '../../../interfaces/form';
 import './FormDetails.css';
 
 export default function FormDetails(): JSX.Element {
   const { id } = useParams<FormDetailsIdType>();
   const data = useSelector<RootState, FormInterface>(
-    (state) => state.form.data
+    (state) => state.form.dataDetails
   );
   const cookies: Cookies = new Cookies();
   const dispatch: Dispatch<any> = useDispatch();

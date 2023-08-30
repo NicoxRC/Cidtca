@@ -1,11 +1,12 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import { getForm } from '../services/getForm';
+import { getForms } from '../services/getForms';
 import type { PayloadAction } from '@reduxjs/toolkit';
 import type { FormInterface } from '../interfaces/form';
-import type { formState } from '../interfaces/initialStateFormSlice';
+import type { formStateInterface } from '../interfaces/initialStateFormSlice';
 
-const initialState: formState = {
-  data: {
+const initialState: formStateInterface = {
+  dataDetails: {
     id: '',
     pregunta_1: '',
     pregunta_2: '',
@@ -257,13 +258,21 @@ const initialState: formState = {
     firma_encuestador: '',
     foto_encuestado: '',
   },
+  dataForms: [],
 };
 
 export const getFormDetails = createAsyncThunk(
-  'dogs/fetchDogs',
+  'form/getForm',
   async (id: string, { dispatch }) => {
     const formDetails: FormInterface = await getForm(id);
     dispatch(updateFormDetails(formDetails));
+  }
+);
+export const getAllForms = createAsyncThunk(
+  'form/getForms',
+  async (_, { dispatch }) => {
+    const formDetails: FormInterface[] = await getForms();
+    dispatch(updateForms(formDetails));
   }
 );
 
@@ -272,11 +281,14 @@ export const formSlice = createSlice({
   initialState,
   reducers: {
     updateFormDetails: (state, action: PayloadAction<FormInterface>) => {
-      state.data = action.payload;
+      state.dataDetails = action.payload;
+    },
+    updateForms: (state, action: PayloadAction<FormInterface[]>) => {
+      state.dataForms = action.payload;
     },
   },
 });
 
-export const { updateFormDetails } = formSlice.actions;
+export const { updateFormDetails, updateForms } = formSlice.actions;
 
 export default formSlice.reducer;

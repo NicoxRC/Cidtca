@@ -1,13 +1,30 @@
 import { useSelector } from 'react-redux';
-import type { RootState } from '../../app/store';
-import type { FormInterface } from '../../interfaces/form';
+import type { RootState } from '../../../app/store';
+import type { FormInterface } from '../../../interfaces/form';
 
 export default function FormDetailsPart8(): JSX.Element {
   const data = useSelector<RootState, FormInterface>(
-    (state) => state.form.data
+    (state) => state.form.dataDetails
   );
   return (
     <div>
+      <div className="container_details">
+        <h1>CRITERIO 8. INTERÉS Y DISPOSICIÓN DE PARTICIPAR EN EL PROYECTO</h1>
+      </div>
+      <div className="container_details">
+        <p>
+          <b>
+            52. ¿Ha recibido o participado en algún proyecto para el
+            fortalecimiento o el mejoramiento del proceso productivo de su
+            organización?:
+          </b>
+          {data.pregunta_52}
+        </p>
+        {data.pregunta_52_cual ? <p>Cual: {data.pregunta_52_cual}</p> : null}
+        {data.pregunta_52_entidad ? (
+          <p>Entidad financiadora: {data.pregunta_52_entidad}</p>
+        ) : null}
+      </div>
       <div className="container_details">
         <p>
           <b>
@@ -98,12 +115,6 @@ export default function FormDetailsPart8(): JSX.Element {
           ) : null}
         </ul>
         {data.pregunta_59_otros ? <p>Otros: {data.pregunta_59_otros}</p> : null}
-      </div>
-      <div className="container_details">
-        <p>
-          <b>60. ¿A qué precio compra usted el litro de leche?:</b>
-          {data.pregunta_60}
-        </p>
       </div>
     </div>
   );

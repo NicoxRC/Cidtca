@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import type { CardPropsInterface } from '../../interfaces/cardPropsInterface';
+import type { CardPropsInterface } from '../../interfaces/cardProps';
 
 export default function Card(props: CardPropsInterface): JSX.Element {
   const {

@@ -1,13 +1,32 @@
 import { useSelector } from 'react-redux';
-import type { RootState } from '../../app/store';
-import type { FormInterface } from '../../interfaces/form';
+import type { RootState } from '../../../app/store';
+import type { FormInterface } from '../../../interfaces/form';
 
 export default function FormDetailsPart7(): JSX.Element {
   const data = useSelector<RootState, FormInterface>(
-    (state) => state.form.data
+    (state) => state.form.dataDetails
   );
   return (
     <div>
+      <div className="container_details">
+        <p>
+          <b>43. Realiza pruebas para la liberación del producto terminado?:</b>
+        </p>
+        <ul>
+          <li>
+            <p>Microbiologicas: {data.pregunta_43_microbiologicas}</p>
+            <p>Cuales: {data.pregunta_43_microbiologicas_cuales}</p>
+          </li>
+          <li>
+            <p>Fisicoquímica: {data.pregunta_43_fisicoquimica}</p>
+            <p>Cuales: {data.pregunta_43_fisicoquimica_cuales}</p>
+          </li>
+          <li>
+            <p>Organolépticas: {data.pregunta_43_organolepticas}</p>
+            <p>Cuales: {data.pregunta_43_organolepticas_cuales}</p>
+          </li>
+        </ul>
+      </div>
       <div className="container_details">
         <p>
           <b>44. ¿Realiza análisis de la información obtenida?:</b>
@@ -88,23 +107,6 @@ export default function FormDetailsPart7(): JSX.Element {
           {data.pregunta_51}
         </p>
         {data.pregunta_51_cual ? <p>Cual: {data.pregunta_51_cual}</p> : null}
-      </div>
-      <div className="container_details">
-        <h1>CRITERIO 8. INTERÉS Y DISPOSICIÓN DE PARTICIPAR EN EL PROYECTO</h1>
-      </div>
-      <div className="container_details">
-        <p>
-          <b>
-            52. ¿Ha recibido o participado en algún proyecto para el
-            fortalecimiento o el mejoramiento del proceso productivo de su
-            organización?:
-          </b>
-          {data.pregunta_52}
-        </p>
-        {data.pregunta_52_cual ? <p>Cual: {data.pregunta_52_cual}</p> : null}
-        {data.pregunta_52_entidad ? (
-          <p>Entidad financiadora: {data.pregunta_52_entidad}</p>
-        ) : null}
       </div>
     </div>
   );

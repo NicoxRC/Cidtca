@@ -1,4 +1,4 @@
-import { EditaValuesInterface } from '../interfaces/editaValuesInterface';
+import type { EditaValuesInterface } from '../interfaces/editaValues';
 
 export const initialValuesEditForm: EditaValuesInterface = {
   pregunta_20: '',

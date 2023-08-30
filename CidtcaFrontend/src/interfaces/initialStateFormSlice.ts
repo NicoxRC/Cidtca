@@ -1,5 +1,6 @@
-import { FormInterface } from './form';
+import type { FormInterface } from './form';
 
-export interface formState {
-  data: FormInterface;
+export interface formStateInterface {
+  dataDetails: FormInterface;
+  dataForms: FormInterface[];
 }

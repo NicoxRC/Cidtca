@@ -1,7 +1,7 @@
 import Swal from 'sweetalert2';
 import { useHistory } from 'react-router-dom';
 import { deleteForm } from '../../services/deleteForm';
-import type { FormDetailsIdType } from '../../types/fromDetailsIdType';
+import type { FormDetailsIdType } from '../../types/fromDetailsId';
 
 export default function DeleteForm(props: FormDetailsIdType): JSX.Element {
   const { id } = props;

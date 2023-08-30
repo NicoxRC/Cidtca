@@ -1,13 +1,66 @@
 import { useSelector } from 'react-redux';
-import type { RootState } from '../../app/store';
-import type { FormInterface } from '../../interfaces/form';
+import type { RootState } from '../../../app/store';
+import type { FormInterface } from '../../../interfaces/form';
 
-export default function FormDetailsPart3(): JSX.Element {
+export default function FormDetailsPart2(): JSX.Element {
   const data = useSelector<RootState, FormInterface>(
-    (state) => state.form.data
+    (state) => state.form.dataDetails
   );
   return (
     <div>
+      <div className="container_details">
+        <h1>CRITERIO 2 CARACTERISTICAS DE ACOPIO Y TRANSPORTE DE LECHE</h1>
+      </div>
+      <div className="container_details">
+        <p>
+          <b>10. ¿Qué métodos de acopio de leche utiliza?:</b>
+        </p>
+        <ul>
+          {data.pregunta_10?.map((el: string) => (
+            <li>{el}</li>
+          ))}
+        </ul>
+        {data.pregunta_10_otro ? <p>Otro: {data.pregunta_10_otro}</p> : null}
+      </div>
+      <div className="container_details">
+        <p>
+          <b>
+            11. ¿De qué manera se transporta la leche hasta la planta/centro de
+            acopio?
+          </b>
+        </p>
+        <ul>
+          {data.pregunta_11?.map((el: string) => (
+            <li>{el}</li>
+          ))}
+        </ul>
+        {data.pregunta_11_otro ? <p>Otro: {data.pregunta_11_otro}</p> : null}
+      </div>
+      <div className="container_details">
+        <p>
+          <b>
+            12. ¿De qué manera transporta la leche desde plataforma a areas de
+            proceso?:
+          </b>
+          <ul>
+            {data.pregunta_12?.map((el: string) => (
+              <li>{el}</li>
+            ))}
+          </ul>
+        </p>
+        {data.pregunta_12_otro ? <p>Otro: {data.pregunta_12_otro}</p> : null}
+      </div>
+      <div className="container_details">
+        <p>
+          <b>13. ¿De qué manera realiza el almacenamiento de la leche?:</b>
+        </p>
+        <ul>
+          {data.pregunta_13?.map((el: string) => (
+            <li>{el}</li>
+          ))}
+        </ul>
+        {data.pregunta_13_otro ? <p>Otro: {data.pregunta_13_otro}</p> : null}
+      </div>
       <div className="container_details">
         <h1>CONOCIMIENTO DE SUS PROVEEDORES</h1>
       </div>
@@ -91,25 +144,6 @@ export default function FormDetailsPart3(): JSX.Element {
         {data.pregunta_17_otro_cuantos ? (
           <p>Otro Cuantos: {data.pregunta_17_otro_cuantos}</p>
         ) : null}
-      </div>
-      <div className="container_details">
-        <h1>
-          CRITERIO 3 UBICACIÓN Y ACCESIBILIDAD A LA PLANTA DE PROCESAMIENTO y/o
-          CENTRO DE ACOPIO
-        </h1>
-      </div>
-      <div className="container_details">
-        <p>
-          <b>
-            18. En lo que respecta a vías, que tipo de acceso predomina para el
-            transporte de leche a la planta
-          </b>
-        </p>
-        <ul>
-          {data.pregunta_18?.map((el: string) => (
-            <li>{el}</li>
-          ))}
-        </ul>
       </div>
     </div>
   );
